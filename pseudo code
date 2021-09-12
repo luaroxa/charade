@@ -1,0 +1,72 @@
+
+CHARADEEEEEEES ! 
+
+fn: with random number generator 
+make a library of words and calling them. 
+event listener for clicks
+updating scores. 
+alert pop-ups for messages. 
+
+1. Constant Variables?
+- 3 game difficulty
+- 3 time limit options per difficulties
+
+2. State / Changing Variables
+- general topic of choice (pending)
+- chrade content (3 words per card)
+- Team A's score
+- Team B's score
+
+3. Game Flow:
+1. A player clicks "Let's Play" on the main page.
+- "Player 1, you ready?"
+1-1. An alert pop up with topic options.
+1-2. The player chooses a topic.
+1-3. Alert box dissapears.
+
+2. A random card with 3 words will generate on page (preferrably with some sort of animation?)
+2-1. player clicks on the 1 word of choice 
+2-2. instruction for players at the bottom : once clicked, timer will start.
+2-2. A timer with the corresponding time limit will start the count down. 
+2-3. Simultaneously a BGM will play for the duration.
+
+2-3-a. If player uses up time till the end, it ends with a pop up alert "nice try".
+2-3-a. no update to the game score. 
+
+2-3-b. Player clicks on "I got it" if they get the right answer. 
+2-3-b. updates the team score. 
+
+
+Extra: 
+shuffle again button. (maybe)
+last 3, 2, 1 seconds in red?
+
+3. Page refreshes with "Player 2, you ready?"
+3.1- repeat the above. 
+3.2 - general message of the "round #" will update.
+
+4. Ending the game:
+4.1 'end the game' button on the page
+4.2 alert with overall score. 'team 1, 2'
+4.3 'start again' button on the same alert to reset to very first 1-1.
+
+
+
+grid flex to setup the card design and the page
+
+
+*If I can play music with the timer that'd be bonus
+*will need a library of vocabs -> random generate
+*if words (within category) can be chosen random (not set per card) would be good too
+
+
+
+
+
+I want to make a chrade game.
+A player can pick a main topic (I will have 3?)
+Then choose a card.
+Each card will have 3 words with difficulty of 1 , 2, 3,
+they click on the word of choice.
+a timer will pop up (difficulty, time): [1, 30] [2, 45] [3,60]
+Alert 'times up' message when time is up.
