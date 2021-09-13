@@ -1,0 +1,66 @@
+* {
+    color: red;
+
+}
+
+body {
+    width: 80%;
+}
+
+button {
+    background-color: rgb(173, 187, 245);
+    color: white;
+    border: 5px dotted;
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    width: 15%;
+}
+
+#restart {
+    text-align: right;
+}
+.card {
+    background-color: purple;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+   #card1 {
+       background-color: sandybrown;
+     background-image: url("img/card.png");
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+     width: 100%;
+     height: 50px;
+   }
+   #card2 {
+       background-color: skyblue;
+    background-image: url("img/card.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 50px;
+  }
+  #card3 {
+      background-color: thistle;
+    background-image: url("img/card.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 50px;
+  }
+
+   .option {
+       background-color: wheat;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    /* justify-content: space-evenly; */
+
+   }
