@@ -15,6 +15,8 @@ let scoreB;
 let words = ["null, null, null"]
 
 
+let a = ''
+
 let scoreBoard = document.getElementById('score-board')
 let mainCard = document.getElementById('card2')
 let answer = document.getElementById('answer')
@@ -34,54 +36,65 @@ var genHard = hard[Math.floor(Math.random() * 6)]
 //     return medium[Math.floor(Math.random() * 6)]
 //   }
 
-// function genMedium() {
-//     return medium[Math.floor(Math.random() * 6)]
-//   }
+function genMedium() {
+    a = medium[Math.floor(Math.random() * 6)]
+  }
 
-//   function genHard() {
-//     return hard[Math.floor(Math.random() * 6)]
-//   }
+  function genHard() {
+    return hard[Math.floor(Math.random() * 6)]
+  }
 //  console.log(genMedium())
 
 
 function init(){
     playerTurn = 1 //player 1
+    words = [null, null, null]
     // words = [genEasy, genMedium, genHard]; 
-//    mainCard.innerText = words
+   mainCard.innerText = ''
 }
 // shuffled 
 mainCard.addEventListener('click', handleClick)
 function handleClick(e){
-  let words = [genEasy, genMedium, genHard]; 
+  words = [genEasy, genMedium, genHard]; 
   mainCard.innerText = words
 //   mainCard = [words[0], words[1], words[2]]
 }
-console.log(mainCard)
+// console.log(mainCard)
 
 // choosing a word
 answer.addEventListener('click', startTimer)
-    function startTimer(duration, display) {
-        var timer = duration, minutes, seconds;
-        setInterval(function () {
-            minutes = parseInt(timer / 60, 10);
-            seconds = parseInt(timer % 60, 10);
+function startTimer(){
+a = words;
+console.log(a)
+}
+
+
+//second type of click : reset
+document.getElementById('restart').addEventListener('click', init);  
+
+
+    // function startTimer(duration, display) {
+    //     var timer = duration, minutes, seconds;
+    //     setInterval(function () {
+    //         minutes = parseInt(timer / 60, 10);
+    //         seconds = parseInt(timer % 60, 10);
     
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
+    //         minutes = minutes < 10 ? "0" + minutes : minutes;
+    //         seconds = seconds < 10 ? "0" + seconds : seconds;
     
-            display.textContent = minutes + ":" + seconds;
+    //         display.textContent = minutes + ":" + seconds;
     
-            if (--timer < 0) {
-                timer = duration;
-            }
-        }, 1000);
-    }
+    //         if (--timer < 0) {
+    //             timer = duration;
+    //         }
+    //     }, 1000);
+    // }
     
-    window.onload = function () {
-        var fiveMinutes = 60 * 5,
-            display = document.querySelector('#time');
-        startTimer(fiveMinutes, display);
-    };
+    // window.onload = function () {
+    //     var fiveMinutes = 60 * 5,
+    //         display = document.querySelector('#time');
+    //     startTimer(fiveMinutes, display);
+    // };
 
 
 

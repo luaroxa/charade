@@ -5,7 +5,7 @@ h1 {
 body {
     width: 80%;
     width:900px;
-    height: 400px;
+    height: 900px;
     margin: auto;
 }
 
@@ -83,6 +83,7 @@ button {
       height: 100px;
       text-align: center;
       margin: auto;
+      margin-top: 20px;
   }
    .option-board {
     background-color: wheat;
@@ -94,10 +95,12 @@ button {
    }
    #giveUp {
     width: 150px;
-    height: 35px;
+    height: 40px;
    }
 
    #answer {
     width: 150px;
-    height: 35px;
+    height: 40px;
+    background-color: violet;
+  
    }
