@@ -1,4 +1,5 @@
 //ICE
+//round 1, 2,3
 //need to coordinate where html goes better
 //then need the 3 words to place in a column with difficulty indicator
 //my team 1 vs 2 is floating around. 
@@ -12,7 +13,7 @@ let winner;
 let cardContent;
 let scoreA;
 let scoreB;
-let words = ["null, null, null"]
+// let words = ["null, null, null"]
 let a = ''
 
 let scoreBoard = document.getElementById('score-board')
@@ -28,41 +29,53 @@ const genMedium = ['Fruit', 'Fungus', 'Film', 'Ice','Garden', 'Gate']
 const genEasy = ['Mist', 'Needle', 'Onion', 'Pants', 'Rainbow', 'Snail']
 
 
-//default setting: 
+// 1. default setting: 
 function init(){
-    playerTurn = 1 //player 1
+    teamTurn = 1 //player 1
 //    mainCard.innerText = ''
 }
 
-// user clicks on start button
+// 2. user clicks on start button (team 1 goes)
 document.getElementById('init').addEventListener('click', genWord)
 function genWord(e){
-  easyEl.innerText = `${genEasy[Math.floor(Math.random() * 6)]} X`
-  mediumEl.innerText = `${genMedium[Math.floor(Math.random() * 6)]} XX`
-  hardEl.innerText = `${genHard[Math.floor(Math.random() * 6)]} XXX`
+  easyEl.innerText = `${genEasy[Math.floor(Math.random() * genEasy.length)]} X`
+  mediumEl.innerText = `${genMedium[Math.floor(Math.random() *genMedium.length)]} XX`
+  hardEl.innerText = `${genHard[Math.floor(Math.random() * genHard.length)]} XXX`
+}
+//splice it by random number. 
+
+//3. user clicks on a word => starting timer. 
+easyEl.addEventListener('click', easyWord)
+//I'm going to have general startTimer fn and another fn for execution. so it can be used else where
+
+function easyWord() {
+    startTimer(5);
+    toggleTeam();
 }
 
-// user clicks on a word => starting timer. 
-// document.querySelector('word').addEventListener('click', startTimer)
-// function startTimer(e){
-// if (e.target.id)
-// }
-
-let count = 60
+function startTimer(m){
+let count = m
 let countdown = setInterval(function(){
     timeEl.innerText = `00:${count}`
-    if(count ===0){
+    if(count === 0){
         // i need this to be 00:00 not 00:0 ??????????????????
-        timeUp()
+        timeEl.innerText = `00:00`
+        timeUp()   
     }
     count--
-},100)
+},1000)
 
 function timeUp() {
     console.log('timesup')
     clearInterval(countdown)
   }
+}
 // end of timer fn.
+
+//toggle team 
+function toggleTeam() {
+    teamTurn *= -1
+  }
 
 //second type of click : reset
 document.getElementById('restart').addEventListener('click', init);  
