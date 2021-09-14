@@ -5,40 +5,68 @@ let winner;
 let cardContent;
 let scoreA;
 let scoreB;
-let intro = ['']
+let words = ["null, null, null"]
 
 
+let scoreBoard = document.getElementById('score-board')
+let mainCard = document.getElementById('card2')
 
 const hard = ['Compass', 'Crystal', 'cup', 'Diamond','Fan','Game']
 const medium = ['Fruit', 'Fungus', 'Film', 'Ice','Garden', 'Gate']
 const easy = ['Mist', 'Needle', 'Onion', 'Pants', 'Rainbow', 'Snail']
 
-let scoreBoard = document.getElementById('score-board')
-let mainCard = document.getElementById('card#2')
+var genEasy = easy[Math.floor(Math.random() * 6)]
+var genMedium = medium[Math.floor(Math.random() * 6)]
+var genHard = hard[Math.floor(Math.random() * 6)]
+
+
+
+// Originally had the following as functions but decided to directly variable it.
+// function genEasy() {
+//     return medium[Math.floor(Math.random() * 6)]
+//   }
+
+// function genMedium() {
+//     return medium[Math.floor(Math.random() * 6)]
+//   }
+
+//   function genHard() {
+//     return hard[Math.floor(Math.random() * 6)]
+//   }
+//  console.log(genMedium())
 
 
 function init(){
-    playerTurn = 1 //player 1 
-    intro = [
-        ['choose']
-        ['your']
-        ['words!']
-    ]
+    playerTurn = 1 //player 1
+    // words = [genEasy, genMedium, genHard]; 
+//    mainCard.innerText = words
 }
+// shuffled
+mainCard.addEventListener('click', handleClick)
+function handleClick(e){
+  let words = [genEasy, genMedium, genHard]; 
+  mainCard.innerText = words
+//   mainCard = [words[0], words[1], words[2]]
+}
+console.log(mainCard)
 
-intro = [hard, med, easy];
 
 
-function genHard() {
-    return hard[Math.floor(Math.random() * 6)]
-  }
+// easy = words.[0]
+// medium = words.[1]
+// hard = words.[2]
 
-function genMedium() {
-    return hard[Math.floor(Math.random() * 6)]
-  }
-
-function genEasy() {
-    return hard[Math.floor(Math.random() * 6)]
-  }
+// generate = [hard, med, easy];
 
   init()
+
+
+//   console.log(genEasy)
+// console.log(words)
+// console.log(mainCard)
+
+//   intro = [
+//     ['choose']
+//     ['your']
+//     ['words!']
+// ]
