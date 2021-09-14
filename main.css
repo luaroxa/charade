@@ -3,8 +3,7 @@ h1 {
 }
 
 body {
-    width: 80%;
-    width:900px;
+    width: 900px;
     height: 900px;
     margin: auto;
 }
@@ -35,27 +34,39 @@ button {
 #start {
     text-align: center;
 }
+#init {
+    text-align: center;
+    background-color: rgb(173, 187, 245);
+    color: white;
+    border: 5px dotted;
+    font-size: 20px;
+    margin: 5px auto;
+    padding: 5px;
+    width: 65%;
+    height: 35px;
+}
 #restart {
     text-align: right;
 }
 .card {
     background-color: purple;
-    height: 80%;
+    height: 400px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
-   #card1 {
-       background-color: sandybrown;
+   #card2 {
+     /* background-color: #f0c079; */
      background-image: url("img/card.png");
      background-size: contain;
      background-repeat: no-repeat;
      background-position: center;
      width: 300px;
      height: 350px;
+     margin: 5px auto;
    }
-   #card2 {
+   #card1, #card3 {
        background-color: skyblue;
     background-image: url("img/card.png");
     background-size: contain;
@@ -63,27 +74,16 @@ button {
     background-position: center;
     width: 300px;
     height: 350px;
-    font-size: 30px;
-    text-align: center;
-    
-
-
-  }
-  #card3 {
-      background-color: thistle;
-    background-image: url("img/card.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 350px;
-  }
-
-  #easy {
+    margin: 5px auto;
+ }
+ 
+  #easy, #medium, #hard {
     background-color: rgb(186, 235, 224);
-    width: 50px;
-    height: 50px;
-    margin: auto;
+    width: 65%;
+    height: 35px;
+    margin: 5px auto;
+    font-size: 20px;
+    text-align: center;
 /* //why isn't easy tag not showingup??  */
   }
 
