@@ -30,7 +30,10 @@ button {
     height: 300px;
     text-align: center;
     margin: auto;
-    
+}
+
+#start {
+    text-align: center;
 }
 #restart {
     text-align: right;
@@ -60,6 +63,11 @@ button {
     background-position: center;
     width: 300px;
     height: 350px;
+    font-size: 30px;
+    text-align: center;
+    
+
+
   }
   #card3 {
       background-color: thistle;
@@ -69,6 +77,14 @@ button {
     background-position: center;
     width: 300px;
     height: 350px;
+  }
+
+  #easy {
+    background-color: rgb(186, 235, 224);
+    width: 50px;
+    height: 50px;
+    margin: auto;
+/* //why isn't easy tag not showingup??  */
   }
 
   .score-board {
@@ -102,5 +118,4 @@ button {
     width: 150px;
     height: 40px;
     background-color: violet;
-  
    }

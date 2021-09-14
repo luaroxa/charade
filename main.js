@@ -4,7 +4,7 @@
 //my team 1 vs 2 is floating around. 
 
 //why is my score board overlapping with mainboard?
-
+//in the future, I probably could write an array to create div per word instead of having 3 html divs. so it can be scaled up. 
 //set 3 main variable
 let score;
 let playerTurn;
@@ -15,19 +15,29 @@ let scoreB;
 let words = ["null, null, null"]
 
 
+
 let a = ''
 
 let scoreBoard = document.getElementById('score-board')
 let mainCard = document.getElementById('card2')
 let answer = document.getElementById('answer')
+let easy = document.getElementById('easy')
+let medium = document.getElementById('medium')
+let hard = document.getElementById('hard')
+let timeEl = document.getElementById('time')
 
-const hard = ['Compass', 'Crystal', 'cup', 'Diamond','Fan','Game']
-const medium = ['Fruit', 'Fungus', 'Film', 'Ice','Garden', 'Gate']
-const easy = ['Mist', 'Needle', 'Onion', 'Pants', 'Rainbow', 'Snail']
+const genHard = ['Compass', 'Crystal', 'cup', 'Diamond','Fan','Game']
+const genMedium = ['Fruit', 'Fungus', 'Film', 'Ice','Garden', 'Gate']
+const genEasy = ['Mist', 'Needle', 'Onion', 'Pants', 'Rainbow', 'Snail']
 
-var genEasy = easy[Math.floor(Math.random() * 6)]
-var genMedium = medium[Math.floor(Math.random() * 6)]
-var genHard = hard[Math.floor(Math.random() * 6)]
+easy = `${genEasy[Math.floor(Math.random() * 6)]} X`
+medium = `${genMedium[Math.floor(Math.random() * 6)]} XX`
+hard = `${genHard[Math.floor(Math.random() * 6)]} XXX`
+
+
+// var genEasy = genEasy[Math.floor(Math.random() * 6)]
+// var genMedium = genMedium[Math.floor(Math.random() * 6)]
+// var genHard = genHard[Math.floor(Math.random() * 6)]
 
 
 
@@ -36,13 +46,13 @@ var genHard = hard[Math.floor(Math.random() * 6)]
 //     return medium[Math.floor(Math.random() * 6)]
 //   }
 
-function genMedium() {
-    a = medium[Math.floor(Math.random() * 6)]
-  }
+// function genMedium() {
+//     a = medium[Math.floor(Math.random() * 6)]
+//   }
 
-  function genHard() {
-    return hard[Math.floor(Math.random() * 6)]
-  }
+//   function genHard() {
+//     return hard[Math.floor(Math.random() * 6)]
+//   }
 //  console.log(genMedium())
 
 
@@ -55,48 +65,53 @@ function init(){
 // shuffled 
 mainCard.addEventListener('click', handleClick)
 function handleClick(e){
-  words = [genEasy, genMedium, genHard]; 
+  words = [easy, medium, hard]; 
+  easy.innerHTML = "easy"
+  medium.innerText = words[1];
+  hard.innerText = words[2];
+  console.log(easy)
+
   mainCard.innerText = words
 //   mainCard = [words[0], words[1], words[2]]
 }
-// console.log(mainCard)
+console.log(mainCard)
 
-// choosing a word
-answer.addEventListener('click', startTimer)
-function startTimer(){
-a = words;
-console.log(a)
-}
+// starting timer. 
+let count = 60
+let countdown = setInterval(function(){
+    timeEl.innerText = count
+    if(count ===0){
+        timeUp()
+    }
+    count--
+},100)
+
+function timeUp() {
+    console.log('timesup')
+    clearInterval(countdown)
+  }
+// end of timer. 
+
+
+//below kept getting eeror why/.
+// let countdown = setInterval(funtion() {
+//     timeEl.innerText = count
+//     if (count === 0) {
+//      timeUp()
+//     }
+//     count--
+// }, 100)
+
+//working clicker ex.
+// answer.addEventListener('click', startTimer)
+// function startTimer(){
+// a = words;
+// console.log(a)
+// }
 
 
 //second type of click : reset
 document.getElementById('restart').addEventListener('click', init);  
-
-
-    // function startTimer(duration, display) {
-    //     var timer = duration, minutes, seconds;
-    //     setInterval(function () {
-    //         minutes = parseInt(timer / 60, 10);
-    //         seconds = parseInt(timer % 60, 10);
-    
-    //         minutes = minutes < 10 ? "0" + minutes : minutes;
-    //         seconds = seconds < 10 ? "0" + seconds : seconds;
-    
-    //         display.textContent = minutes + ":" + seconds;
-    
-    //         if (--timer < 0) {
-    //             timer = duration;
-    //         }
-    //     }, 1000);
-    // }
-    
-    // window.onload = function () {
-    //     var fiveMinutes = 60 * 5,
-    //         display = document.querySelector('#time');
-    //     startTimer(fiveMinutes, display);
-    // };
-
-
 
 
 // easy = words.[0]
@@ -107,10 +122,6 @@ document.getElementById('restart').addEventListener('click', init);
 
   init()
 
-
-//   console.log(genEasy)
-// console.log(words)
-// console.log(mainCard)
 
 //   intro = [
 //     ['choose']
