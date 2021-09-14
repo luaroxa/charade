@@ -15,24 +15,23 @@ let scoreB;
 let words = ["null, null, null"]
 
 
-
 let a = ''
 
 let scoreBoard = document.getElementById('score-board')
 let mainCard = document.getElementById('card2')
 let answer = document.getElementById('answer')
-let easy = document.getElementById('easy')
-let medium = document.getElementById('medium')
-let hard = document.getElementById('hard')
+let easyEl = document.getElementById('easy')
+let mediumEl = document.getElementById('medium')
+let hardEl = document.getElementById('hard')
 let timeEl = document.getElementById('time')
 
 const genHard = ['Compass', 'Crystal', 'cup', 'Diamond','Fan','Game']
 const genMedium = ['Fruit', 'Fungus', 'Film', 'Ice','Garden', 'Gate']
 const genEasy = ['Mist', 'Needle', 'Onion', 'Pants', 'Rainbow', 'Snail']
 
-easy = `${genEasy[Math.floor(Math.random() * 6)]} X`
-medium = `${genMedium[Math.floor(Math.random() * 6)]} XX`
-hard = `${genHard[Math.floor(Math.random() * 6)]} XXX`
+let easy = `${genEasy[Math.floor(Math.random() * 6)]} X`
+let medium = `${genMedium[Math.floor(Math.random() * 6)]} XX`
+let hard = `${genHard[Math.floor(Math.random() * 6)]} XXX`
 
 
 // var genEasy = genEasy[Math.floor(Math.random() * 6)]
@@ -41,37 +40,25 @@ hard = `${genHard[Math.floor(Math.random() * 6)]} XXX`
 
 
 
-// Originally had the following as functions but decided to directly variable it.
-// function genEasy() {
-//     return medium[Math.floor(Math.random() * 6)]
-//   }
 
-// function genMedium() {
-//     a = medium[Math.floor(Math.random() * 6)]
-//   }
-
-//   function genHard() {
-//     return hard[Math.floor(Math.random() * 6)]
-//   }
-//  console.log(genMedium())
 
 
 function init(){
     playerTurn = 1 //player 1
     words = [null, null, null]
     // words = [genEasy, genMedium, genHard]; 
-   mainCard.innerText = ''
+//    mainCard.innerText = ''
 }
 // shuffled 
 mainCard.addEventListener('click', handleClick)
 function handleClick(e){
   words = [easy, medium, hard]; 
-  easy.innerHTML = "easy"
-  medium.innerText = words[1];
-  hard.innerText = words[2];
+  easyEl.innerText = easy;
+  mediumEl.innerText = words[1];
+  hardEl.innerText = words[2];
   console.log(easy)
 
-  mainCard.innerText = words
+//   mainCard.innerText = words
 //   mainCard = [words[0], words[1], words[2]]
 }
 console.log(mainCard)
@@ -90,28 +77,15 @@ function timeUp() {
     console.log('timesup')
     clearInterval(countdown)
   }
-// end of timer. 
-
-
-//below kept getting eeror why/.
-// let countdown = setInterval(funtion() {
-//     timeEl.innerText = count
-//     if (count === 0) {
-//      timeUp()
-//     }
-//     count--
-// }, 100)
-
-//working clicker ex.
-// answer.addEventListener('click', startTimer)
-// function startTimer(){
-// a = words;
-// console.log(a)
-// }
-
+// end of timer fn.
 
 //second type of click : reset
 document.getElementById('restart').addEventListener('click', init);  
+
+init()
+
+
+/////////NOTES:
 
 
 // easy = words.[0]
@@ -120,7 +94,13 @@ document.getElementById('restart').addEventListener('click', init);
 
 // generate = [hard, med, easy];
 
-  init()
+//working clicker ex.
+// answer.addEventListener('click', startTimer)
+// function startTimer(){
+// a = words;
+// console.log(a)
+// }
+ 
 
 
 //   intro = [
@@ -128,3 +108,27 @@ document.getElementById('restart').addEventListener('click', init);
 //     ['your']
 //     ['words!']
 // ]
+
+// Originally had the following as functions but decided to directly variable it.
+// function genEasy() {
+//     return medium[Math.floor(Math.random() * 6)]
+//   }
+
+// function genMedium() {
+//     a = medium[Math.floor(Math.random() * 6)]
+//   }
+
+//   function genHard() {
+//     return hard[Math.floor(Math.random() * 6)]
+//   }
+//  console.log(genMedium())
+
+
+// below kept getting eeror why/.
+// let countdown = setInterval(funtion(){
+//     timeEl.innerText = count
+//     if(count ===0){
+//      timeUp()
+//     }
+//     count--
+// }, 100)
