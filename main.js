@@ -13,8 +13,6 @@ let cardContent;
 let scoreA;
 let scoreB;
 let words = ["null, null, null"]
-
-
 let a = ''
 
 let scoreBoard = document.getElementById('score-board')
@@ -37,9 +35,6 @@ let hard = `${genHard[Math.floor(Math.random() * 6)]} XXX`
 // var genEasy = genEasy[Math.floor(Math.random() * 6)]
 // var genMedium = genMedium[Math.floor(Math.random() * 6)]
 // var genHard = genHard[Math.floor(Math.random() * 6)]
-
-
-
 
 
 
