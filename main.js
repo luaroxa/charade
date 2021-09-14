@@ -1,3 +1,10 @@
+//ICE
+//need to coordinate where html goes better
+//then need the 3 words to place in a column with difficulty indicator
+//my team 1 vs 2 is floating around. 
+
+//why is my score board overlapping with mainboard?
+
 //set 3 main variable
 let score;
 let playerTurn;
@@ -10,6 +17,7 @@ let words = ["null, null, null"]
 
 let scoreBoard = document.getElementById('score-board')
 let mainCard = document.getElementById('card2')
+let answer = document.getElementById('answer')
 
 const hard = ['Compass', 'Crystal', 'cup', 'Diamond','Fan','Game']
 const medium = ['Fruit', 'Fungus', 'Film', 'Ice','Garden', 'Gate']
@@ -41,7 +49,7 @@ function init(){
     // words = [genEasy, genMedium, genHard]; 
 //    mainCard.innerText = words
 }
-// shuffled
+// shuffled 
 mainCard.addEventListener('click', handleClick)
 function handleClick(e){
   let words = [genEasy, genMedium, genHard]; 
@@ -49,6 +57,32 @@ function handleClick(e){
 //   mainCard = [words[0], words[1], words[2]]
 }
 console.log(mainCard)
+
+// choosing a word
+answer.addEventListener('click', startTimer)
+    function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+    
+    window.onload = function () {
+        var fiveMinutes = 60 * 5,
+            display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
+    };
+
 
 
 
