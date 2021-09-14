@@ -27,38 +27,27 @@ const genHard = ['Compass', 'Crystal', 'cup', 'Diamond','Fan','Game']
 const genMedium = ['Fruit', 'Fungus', 'Film', 'Ice','Garden', 'Gate']
 const genEasy = ['Mist', 'Needle', 'Onion', 'Pants', 'Rainbow', 'Snail']
 
-let easy = `${genEasy[Math.floor(Math.random() * 6)]} X`
-let medium = `${genMedium[Math.floor(Math.random() * 6)]} XX`
-let hard = `${genHard[Math.floor(Math.random() * 6)]} XXX`
 
-
-// var genEasy = genEasy[Math.floor(Math.random() * 6)]
-// var genMedium = genMedium[Math.floor(Math.random() * 6)]
-// var genHard = genHard[Math.floor(Math.random() * 6)]
-
-
-
+//default setting: 
 function init(){
     playerTurn = 1 //player 1
-    words = [null, null, null]
-    // words = [genEasy, genMedium, genHard]; 
 //    mainCard.innerText = ''
 }
-// shuffled 
-mainCard.addEventListener('click', handleClick)
-function handleClick(e){
-  words = [easy, medium, hard]; 
-  easyEl.innerText = easy;
-  mediumEl.innerText = words[1];
-  hardEl.innerText = words[2];
-  console.log(easy)
 
-//   mainCard.innerText = words
-//   mainCard = [words[0], words[1], words[2]]
+// user clicks on start button
+document.getElementById('init').addEventListener('click', genWord)
+function genWord(e){
+  easyEl.innerText = `${genEasy[Math.floor(Math.random() * 6)]} X`
+  mediumEl.innerText = `${genMedium[Math.floor(Math.random() * 6)]} XX`
+  hardEl.innerText = `${genHard[Math.floor(Math.random() * 6)]} XXX`
 }
-console.log(mainCard)
 
-// starting timer. 
+// user clicks on a word => starting timer. 
+// document.querySelector('word').addEventListener('click', startTimer)
+// function startTimer(e){
+// if (e.target.id)
+// }
+
 let count = 60
 let countdown = setInterval(function(){
     timeEl.innerText = `00:${count}`
@@ -82,14 +71,6 @@ init()
 
 
 /////////NOTES:
-
-
-// easy = words.[0]
-// medium = words.[1]
-// hard = words.[2]
-
-// generate = [hard, med, easy];
-
 //working clicker ex.
 // answer.addEventListener('click', startTimer)
 // function startTimer(){
@@ -105,19 +86,8 @@ init()
 //     ['words!']
 // ]
 
-// Originally had the following as functions but decided to directly variable it.
-// function genEasy() {
-//     return medium[Math.floor(Math.random() * 6)]
-//   }
 
-// function genMedium() {
-//     a = medium[Math.floor(Math.random() * 6)]
-//   }
 
-//   function genHard() {
-//     return hard[Math.floor(Math.random() * 6)]
-//   }
-//  console.log(genMedium())
 
 
 // below kept getting eeror why/.
