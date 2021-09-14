@@ -18,10 +18,9 @@
    <h1>Welcome to charade!</h1>
    <div class="timer">
     <img id="timerimg" src="img/timer.png">
-    <div> Count down starts <span id="time">05:00</span> seconds!</div>
-    <!-- Timer goes here with count down and maybe stop and play music button  -->
-</div>
-<h1> below is where cards go</h1>
+    <div id="time">05:00</div>
+    <!-- <div> Count down starts <span id="time">05:00</span> seconds!</div> -->
+   </div>
 
 <div class="card"> 
     <div id="card1">
@@ -37,9 +36,10 @@
 </div>
 
 <div id="score-board">  
-    <div id="score">
-     team 1 vs team 2  
-    </div> </div>
+        <div id="score1"> Team 1 : <span id="current_score1"> 0 </span> !</div>
+        <div id="score2"> Team 2 : <span id="current_score2"> 0 </span> !</div>
+     <!-- when I click on I got the answer, the current player's needs to go up.and start the next game. -->
+    </div> 
 
 <div class="option-board">
     <button id="giveUp">I give up!</button>

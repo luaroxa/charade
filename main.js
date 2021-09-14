@@ -61,8 +61,9 @@ console.log(mainCard)
 // starting timer. 
 let count = 60
 let countdown = setInterval(function(){
-    timeEl.innerText = count
+    timeEl.innerText = `00:${count}`
     if(count ===0){
+        // i need this to be 00:00 not 00:0 ??????????????????
         timeUp()
     }
     count--
