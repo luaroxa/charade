@@ -9,10 +9,10 @@
 //winner logic  (or end of game logic)
 
 // Q:
-// stopping clicking fn doens't work. 
-//broken timer
+// stopping clicking fn doens't work.  -> to prevent people from clicking multiple words, multiple time. 
+//I need to force quit timer
 // team switch -> how to recogznie better
-// make button disspear
+
 
 //in the future, I probably could write an array to create div per word instead of having 3 html divs. so it can be scaled up. 
 //set 3 main variable
@@ -23,7 +23,7 @@ let scoreB = 0;
 // let words = ["null, null, null"]
 // let cardContent;
 
-let scoreBoard = document.getElementById('score-board')
+let scoreBoard = document.getElementById('scoreBoard')
 let current_score1 = document.getElementById('current_score1')
 let current_score2 = document.getElementById('current_score2')
 // let mainCard = document.getElementById('card2')
@@ -43,7 +43,9 @@ function init(){
    easyEl.innerText = "";
    mediumEl.innerText = "";
    hardEl.innerText = "";
-   document.getElementById('init').style.display='block'; 
+   document.getElementById('init').style.display='block';
+   clearInterval(countdown) 
+   timeEl.innerText = `00:${count}`
 }
 
 // 2. user clicks on start button (team 1 goes)
@@ -52,10 +54,7 @@ function genWord(){
   easyEl.innerText = genRandom(genEasy) + 'X'
   mediumEl.innerText = genRandom(genMedium) + 'XX'
   hardEl.innerText = genRandom(genHard) + 'XXX'
-  document.getElementById('init').onclick = "";
-  // init.style.display === 'none';
   document.getElementById('init').style.display='none'; 
-  //make initdissaper
 }
 
 //3. Genera random fn
@@ -67,9 +66,28 @@ function genRandom(arr){
 }
 
 //3. user clicks on a word => starting timer. 
-easyEl.addEventListener('click', startTimer(30))
-mediumEl.addEventListener('click', startTimer(45))
-hardEl.addEventListener('click', startTimer(60))
+easyEl.addEventListener('click', function(){
+startTimer(30)
+mediumEl.innerText = "";
+hardEl.innerText = "";
+document.querySelectorAll('.word').disabled=true; 
+})
+
+mediumEl.addEventListener('click', function(){
+  startTimer(45)
+  easyEl.innerText = "";
+  hardEl.innerText = "";
+  document.getElementById('word').disabled=true; 
+  })
+hardEl.addEventListener('click', function(){
+startTimer(60)
+mediumEl.innerText = "";
+easyEl.innerText = "";
+document.getElementById('word').disabled=true; 
+})
+
+// mediumEl.addEventListener('click', function(){startTimer(45)})
+
 
 function startTimer(s){
 let count = s

@@ -34,8 +34,9 @@ button {
     background-size: contain;
      background-repeat: no-repeat;
      background-position: center;
-     height: 100%;
-     width: 100%;
+     height: 90%;
+     width: 90%;
+     margin: 0 auto;
 }
 #img {
     width: 800px;
@@ -63,7 +64,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
    #card2 {
@@ -95,7 +96,7 @@ button {
  
   #easy, #medium, #hard {
     background-color: white;
-    /* color: black; */
+    color: #7a77de;
     border-radius: 15px;
     width: 65%;
     height: 35px;
@@ -105,7 +106,7 @@ button {
     cursor: pointer;
   }
 
-  #score-board {
+  #scoreBoard {
     /* background-color: rgb(186, 235, 224); */
     width: 100%;
     height: 100px;
@@ -126,16 +127,16 @@ button {
   }
 
   /* Answer Option */
-   .option-board {
+   .answerBoard {
     /* background-color: wheat; */
     width: 100%;
-    height: 300px;
+    height: 200px;
     display: flex;
     flex-direction: row;
    }
    #giveupContainer{
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     display: flex;
     background-image: url("img/trash.png");
     background-size: contain;
@@ -146,7 +147,6 @@ button {
     /* background-color: black; */
    }
    #giveup {
-    
     /* width: 173px;
     height: 42.5px; */
     padding: 10px;
@@ -156,8 +156,8 @@ button {
    }
 
    #answerContainer{
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     background-image: url("img/trophy.png");
     background-size: contain;
      background-repeat: no-repeat;
