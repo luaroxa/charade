@@ -4,20 +4,21 @@
 //then need the 3 words to place in a column with difficulty indicator
 //my team 1 vs 2 is floating around. 
 
-//why is my score board overlapping with mainboard?
+// stopping fn doens't work. 
 //in the future, I probably could write an array to create div per word instead of having 3 html divs. so it can be scaled up. 
 //set 3 main variable
-let score;
-let playerTurn;
+let teamTurn =1;//player 1
 let winner;
-let cardContent;
-let scoreA;
-let scoreB;
+// let cardContent;
+let scoreA = 0;
+let scoreB = 0;
 // let words = ["null, null, null"]
-let a = ''
+
 
 let scoreBoard = document.getElementById('score-board')
-let mainCard = document.getElementById('card2')
+let current_score1 = document.getElementById('current_score1')
+let current_score2 = document.getElementById('current_score2')
+// let mainCard = document.getElementById('card2')
 let answer = document.getElementById('answer')
 let easyEl = document.getElementById('easy')
 let mediumEl = document.getElementById('medium')
@@ -30,9 +31,10 @@ const genEasy = ['Mist', 'Needle', 'Onion', 'Pants', 'Rainbow', 'Snail']
 
 
 // 1. default setting: 
-function init(){
-    teamTurn = 1 //player 1
-//    mainCard.innerText = ''
+function init(){ 
+   easyEl.innerText = "";
+   mediumEl.innerText = "";
+   hardEl.innerText = "";
 }
 
 // 2. user clicks on start button (team 1 goes)
@@ -41,34 +43,28 @@ function genWord(){
   easyEl.innerText = genRandom(genEasy) + 'X'
   mediumEl.innerText = genRandom(genMedium) + 'XX'
   hardEl.innerText = genRandom(genHard) + 'XXX'
-
+  document.getElementById('init').onclick = "";
 }
-//splice it by random number. 
-function genRandom(arr){
-    return arr.splice(Math.floor(Math.random() * arr.length),1 )
-}
-//3. user clicks on a word => starting timer. 
-easyEl.addEventListener('click', easyWord)
-//I'm going to have general startTimer fn and another fn for execution. so it can be used else where
 
-// function easyWord() {
-//     getRandom(genEasy);
-//     startTimer(30);
-//     toggleTeam();
-// }
-
+//3. Genera random fn
 //generating random number to splice the array by it as index and take the return. 
 //this also removes that specific word from the original array. 
 //so I should put a stopper on when array becomes empty. 
+function genRandom(arr){
+    return arr.splice(Math.floor(Math.random() * arr.length),1 )
+}
 
+//3. user clicks on a word => starting timer. 
+easyEl.addEventListener('click', startTimer(30))
+mediumEl.addEventListener('click', startTimer(45))
+hardEl.addEventListener('click', startTimer(60))
 
-function startTimer(m){
-let count = m
+function startTimer(s){
+let count = s
 let countdown = setInterval(function(){
     timeEl.innerText = `00:${count}`
     if(count === 0){
-        // i need this to be 00:00 not 00:0 ??????????????????
-        timeEl.innerText = `00:00`
+    timeEl.innerText = `00:00`
         timeUp()   
     }
     count--
@@ -81,10 +77,32 @@ function timeUp() {
 }
 // end of timer fn.
 
+// I GIVE UP : passing turn
+
+//I GOT the answer: pass turn + 1 to whomever turn it was. 
+document.getElementById('answer').addEventListener('click', won)
+function won(){
+    scoreA += 1;
+    current_score1.innerText = scoreA;
+    toggleTeam();
+    init ();
+    console.log(scoreA);
+}
+//need for score B, but there must be a better way to do both in one fn. å
+
+document.getElementById('giveup').addEventListener('click', giveup)
+function giveup(){
+   init();
+   toggleTeam();
+    console.log(teamTurn);
+}
 //toggle team 
 function toggleTeam() {
-    teamTurn *= -1
+    teamTurn *= -1;
   }
+
+
+
 
 //second type of click : reset
 document.getElementById('restart').addEventListener('click', init);  
