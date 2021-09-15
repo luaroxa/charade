@@ -5,15 +5,15 @@
 //my team 1 vs 2 is floating around. 
 
 // stopping fn doens't work. 
+//broken timer
 //in the future, I probably could write an array to create div per word instead of having 3 html divs. so it can be scaled up. 
 //set 3 main variable
 let teamTurn =1;//player 1
 let winner;
-// let cardContent;
 let scoreA = 0;
 let scoreB = 0;
 // let words = ["null, null, null"]
-
+// let cardContent;
 
 let scoreBoard = document.getElementById('score-board')
 let current_score1 = document.getElementById('current_score1')
