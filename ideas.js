@@ -43,3 +43,13 @@ function genWord(e){
 }
 
 //AFter:
+
+
+function genRandom(arr){
+    return arr.aplice(Math.floor(Math.random() * arr.length),1 )
+}
+
+//before
+mediumEl.innerText = `${genMedium[Math.floor(Math.random() *genMedium.length)]} XX`
+//after
+mediumEl.innerText = genRandom(genMedium) + 'XX'

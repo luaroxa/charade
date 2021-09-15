@@ -37,21 +37,30 @@ function init(){
 
 // 2. user clicks on start button (team 1 goes)
 document.getElementById('init').addEventListener('click', genWord)
-function genWord(e){
-  easyEl.innerText = `${genEasy[Math.floor(Math.random() * genEasy.length)]} X`
-  mediumEl.innerText = `${genMedium[Math.floor(Math.random() *genMedium.length)]} XX`
-  hardEl.innerText = `${genHard[Math.floor(Math.random() * genHard.length)]} XXX`
+function genWord(){
+  easyEl.innerText = genRandom(genEasy) + 'X'
+  mediumEl.innerText = genRandom(genMedium) + 'XX'
+  hardEl.innerText = genRandom(genHard) + 'XXX'
+
 }
 //splice it by random number. 
-
+function genRandom(arr){
+    return arr.splice(Math.floor(Math.random() * arr.length),1 )
+}
 //3. user clicks on a word => starting timer. 
 easyEl.addEventListener('click', easyWord)
 //I'm going to have general startTimer fn and another fn for execution. so it can be used else where
 
-function easyWord() {
-    startTimer(5);
-    toggleTeam();
-}
+// function easyWord() {
+//     getRandom(genEasy);
+//     startTimer(30);
+//     toggleTeam();
+// }
+
+//generating random number to splice the array by it as index and take the return. 
+//this also removes that specific word from the original array. 
+//so I should put a stopper on when array becomes empty. 
+
 
 function startTimer(m){
 let count = m
