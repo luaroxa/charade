@@ -29,9 +29,17 @@ button {
     margin: auto;
     /* background-color: teal; */
 }
+#clock{
+    background-image: url("img/clock.png");
+    background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+     height: 100%;
+     width: 100%;
+}
 #img {
-    width: 120px;
-    height: 180px;
+    width: 800px;
+    height: 800px;
     text-align: center;
     margin: auto;
 }
@@ -84,7 +92,8 @@ button {
  }
  
   #easy, #medium, #hard {
-    background-color:white;
+    background-color: white;
+    /* color: black; */
     border-radius: 15px;
     width: 65%;
     height: 35px;
