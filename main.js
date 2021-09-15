@@ -1,11 +1,19 @@
 //ICE
 //round 1, 2,3
-//need to coordinate where html goes better
-//then need the 3 words to place in a column with difficulty indicator
-//my team 1 vs 2 is floating around. 
 
-// stopping fn doens't work. 
+// difficulty indicator
+//my team 1 vs 2 is floating around. 
+//api ? 
+//choose team name? 
+//pop up of welcome to Chrade when first come in. 
+//winner logic  (or end of game logic)
+
+// Q:
+// stopping clicking fn doens't work. 
 //broken timer
+// team switch -> how to recogznie better
+// make button disspear
+
 //in the future, I probably could write an array to create div per word instead of having 3 html divs. so it can be scaled up. 
 //set 3 main variable
 let teamTurn =1;//player 1
@@ -35,6 +43,7 @@ function init(){
    easyEl.innerText = "";
    mediumEl.innerText = "";
    hardEl.innerText = "";
+   document.getElementById('init').style.display='block'; 
 }
 
 // 2. user clicks on start button (team 1 goes)
@@ -44,6 +53,9 @@ function genWord(){
   mediumEl.innerText = genRandom(genMedium) + 'XX'
   hardEl.innerText = genRandom(genHard) + 'XXX'
   document.getElementById('init').onclick = "";
+  // init.style.display === 'none';
+  document.getElementById('init').style.display='none'; 
+  //make initdissaper
 }
 
 //3. Genera random fn
@@ -78,6 +90,12 @@ function timeUp() {
 // end of timer fn.
 
 // I GIVE UP : passing turn
+document.getElementById('giveup').addEventListener('click', giveup)
+function giveup(){
+   init();
+   toggleTeam();
+    console.log(teamTurn);
+}
 
 //I GOT the answer: pass turn + 1 to whomever turn it was. 
 document.getElementById('answer').addEventListener('click', won)
@@ -90,19 +108,11 @@ function won(){
 }
 //need for score B, but there must be a better way to do both in one fn. å
 
-document.getElementById('giveup').addEventListener('click', giveup)
-function giveup(){
-   init();
-   toggleTeam();
-    console.log(teamTurn);
-}
+
 //toggle team 
 function toggleTeam() {
     teamTurn *= -1;
   }
-
-
-
 
 //second type of click : reset
 document.getElementById('restart').addEventListener('click', init);  
