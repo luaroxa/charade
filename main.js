@@ -20,6 +20,8 @@ let teamTurn =1;//player 1
 let winner;
 let scoreA = 0;
 let scoreB = 0;
+let timerRunning = false;
+let countdown;
 // let words = ["null, null, null"]
 // let cardContent;
 
@@ -32,6 +34,7 @@ let easyEl = document.getElementById('easy')
 let mediumEl = document.getElementById('medium')
 let hardEl = document.getElementById('hard')
 let timeEl = document.getElementById('time')
+let wordEl = document.querySelectorAll('.word')
 
 const genHard = ['Compass', 'Crystal', 'cup', 'Diamond','Fan','Game']
 const genMedium = ['Fruit', 'Fungus', 'Film', 'Ice','Garden', 'Gate']
@@ -44,17 +47,30 @@ function init(){
    mediumEl.innerText = "";
    hardEl.innerText = "";
    document.getElementById('init').style.display='block';
-   clearInterval(countdown) 
-   timeEl.innerText = `00:${count}`
-}
-
+    if (timerRunning) {
+      clearInterval(countdown)
+      timerRunning = false
+   }
+   timeEl.innerText = `00:00`
+   wordEl.forEach(element => element.disabled=false)
+  }
 // 2. user clicks on start button (team 1 goes)
 document.getElementById('init').addEventListener('click', genWord)
 function genWord(){
+  if (genHard.length === 0) return gameEnd()
   easyEl.innerText = genRandom(genEasy) + 'X'
   mediumEl.innerText = genRandom(genMedium) + 'XX'
   hardEl.innerText = genRandom(genHard) + 'XXX'
   document.getElementById('init').style.display='none'; 
+}
+
+//end logic 
+function gameEnd() {
+  current_score1 > current_score2 ? alert ('team A won'): alert('team B won')
+  document.querySelector('.modal').classList.remove('hidden')
+  //buttono to restart and hide the modal again when clicked
+  // ternary instead of doing alert, it will change meesageEl .
+  
 }
 
 //3. Genera random fn
@@ -70,20 +86,23 @@ easyEl.addEventListener('click', function(){
 startTimer(30)
 mediumEl.innerText = "";
 hardEl.innerText = "";
-document.querySelectorAll('.word').disabled=true; 
+wordEl.forEach(element =>  element.disabled=true)
 })
+// selectall gave like an arr, so gotta loop through it!
+
 
 mediumEl.addEventListener('click', function(){
   startTimer(45)
   easyEl.innerText = "";
   hardEl.innerText = "";
-  document.getElementById('word').disabled=true; 
+  wordEl.forEach(element =>  element.disabled=true)
   })
+
 hardEl.addEventListener('click', function(){
 startTimer(60)
 mediumEl.innerText = "";
 easyEl.innerText = "";
-document.getElementById('word').disabled=true; 
+wordEl.forEach(element =>  element.disabled=true)
 })
 
 // mediumEl.addEventListener('click', function(){startTimer(45)})
@@ -91,7 +110,8 @@ document.getElementById('word').disabled=true;
 
 function startTimer(s){
 let count = s
-let countdown = setInterval(function(){
+timerRunning = true;
+countdown = setInterval(function(){
     timeEl.innerText = `00:${count}`
     if(count === 0){
     timeEl.innerText = `00:00`
@@ -101,9 +121,10 @@ let countdown = setInterval(function(){
 },1000)
 
 function timeUp() {
+  timerRunning = false;
     console.log('timesup')
-    clearInterval(countdown)
-  }
+      clearInterval(countdown)
+    }
 }
 // end of timer fn.
 
@@ -123,6 +144,7 @@ function won(){
     toggleTeam();
     init ();
     console.log(scoreA);
+    console.log(countdown)
 }
 //need for score B, but there must be a better way to do both in one fn. å
 
@@ -136,6 +158,7 @@ function toggleTeam() {
 document.getElementById('restart').addEventListener('click', init);  
 
 init()
+
 
 
 /////////NOTES:
@@ -155,14 +178,3 @@ init()
 // ]
 
 
-
-
-
-// below kept getting eeror why/.
-// let countdown = setInterval(funtion(){
-//     timeEl.innerText = count
-//     if(count ===0){
-//      timeUp()
-//     }
-//     count--
-// }, 100)
