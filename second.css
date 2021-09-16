@@ -109,6 +109,7 @@ button {
   margin: 0 auto;
 }
 
+
 #init {
   text-align: center;
   background-color: rgb(173, 187, 245);
@@ -167,7 +168,7 @@ button {
   background-color: white;
   color: #7a77de;
   border-radius: 15px;
-  width: 170px;
+  width: 180px;
   height: 35px;
   margin: 5px auto;
   font-size: 20px;
@@ -268,17 +269,25 @@ button {
   background-color: lightskyblue;
 }
 
-.modal {
-  height: 400px;
-  width: 400px;
+.modalScore {
+  height: 250px;
+  width: 650px;
   font-size: 50px;
+  text-align: center;
   float: initial;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
+  background-image: url("img/modalScore.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 0px;
+  margin: 0;
+    padding: 0;
 }
+
 
 #modalInst {
     display: none; /* Hidden by default */

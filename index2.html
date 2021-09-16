@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="second.css">
     <script defer src="second.js"></script>
 
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest"> -->
 </head>
 
 <body>
-    <div class="modal hidden">hehehe</div>
+    <div class="modalScore hidden">
+        <p id="scoreMsg">Winnger Msg</p>
+        <button class="modalRestart" id="restart">Restart</button>
+    </div>
    
 <div class="window">
 <div class="topRow"> Welcome to charades!</div>
@@ -25,10 +24,14 @@
        <p> HOME </p>
        <div id="currentScore1"> 0 </div>
     </div>
+
+
     <div id="timer">
         <div id="clock"></div>
     <div id="time">00:00</div>
     </div>
+
+
     <div id="guest">
         <p> GUEST </p>
         <div id="currentScore2"> 0 </div>

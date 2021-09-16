@@ -6,6 +6,7 @@
 //ICE for CSS
 // guessing words are not centered in vertical
 // ????????? borders are noot complete
+//favicon
 
 //pop up of welcome to Chrade when first come in.
 //winner logic  (or end of game logic)
@@ -24,10 +25,13 @@ let timerRunning = false;
 let countdown;
 var inst = document.getElementById("inst");
 var modalInst = document.getElementById("modalInst");
+var modalScore = document.querySelector(".modalScore")
+var modalRestart= document.querySelector(".modalRestart")
+var scoreMsg = document.getElementById("scoreMsg")
 
 let scoreBoard = document.getElementById("scoreBoard");
-let current_score1 = document.getElementById("current_score1");
-let current_score2 = document.getElementById("current_score2");
+let currentScore1 = document.getElementById("currentScore1")  
+let currentScore2 = document.getElementById("currentScore2")
 let answer = document.getElementById("answer");
 let easyEl = document.getElementById("easy");
 let mediumEl = document.getElementById("medium");
@@ -54,27 +58,36 @@ function init() {
   wordEl.forEach((element) => (element.disabled = false));
 }
 // 2. user clicks on start button (team 1 goes)
+//???????????????? need to take game end out so they don't need to click init to figure out that it enedd. 
 document.getElementById("init").addEventListener("click", genWord);
 function genWord() {
-  if (genHard.length === 0) return gameEnd();
+  
   easyEl.innerText = genRandom(genEasy) + ` ${dia}`;
   mediumEl.innerText = genRandom(genMedium) + ` ${dia}${dia}`;
   hardEl.innerText = genRandom(genHard) + ` ${dia}${dia}${dia}`;
   document.getElementById("init").style.display = "none";
 }
 
-//end logic
+//end logic -< broke
 function gameEnd() {
-  current_score1 > current_score2 ? alert("team A won") : alert("team B won");
-  document.querySelector(".modal").classList.remove("hidden");
+//    ? alert("team A won") : alert("team B won");
+  modalScore.classList.remove("hidden");
+ if(scoreA === scoreB){
+    scoreMsg.innerText = "It's a tie";
+ } else if (scoreA > scoreB){
+    scoreMsg.innerText = "Guest won!";
+ } else {
+    scoreMsg.innerText = "Home won!";
+ }
+ }
+ 
+  
+  
   //buttono to restart and hide the modal again when clicked
   // ternary instead of doing alert, it will change meesageEl .
-}
+
 
 //3. Genera random fn
-//generating random number to splice the array by it as index and take the return.
-//this also removes that specific word from the original array.
-//so I should put a stopper on when array becomes empty.
 function genRandom(arr) {
   return arr.splice(Math.floor(Math.random() * arr.length), 1);
 }
@@ -86,7 +99,7 @@ easyEl.addEventListener("click", function () {
   hardEl.innerText = "";
   wordEl.forEach((element) => (element.disabled = true));
 });
-// selectall gave like an arr, so gotta loop through it!
+
 
 mediumEl.addEventListener("click", function () {
   startTimer(45);
@@ -129,21 +142,21 @@ document.getElementById("giveup").addEventListener("click", giveup);
 function giveup() {
   init();
   toggleTeam();
-  //  console.log('A' + scoreA);
-  //   console.log('B' + scoreB);
+  if (genHard.length === 0) return gameEnd();
+   console.log('A' + scoreA);
+    console.log('B' + scoreB);
 }
 
 //I GOT the answer: pass turn + 1 to whomever turn it was.
 document.getElementById("answer").addEventListener("click", won);
 function won(team) {
+    if (genHard.length === 0) return gameEnd();  
   teamTurn > 0 ? (scoreA += 1) : (scoreB += 1);
-  teamTurn > 0
-    ? (current_score1.innerText = scoreA)
-    : (current_score2.innerText = scoreB);
+  teamTurn > 0 ? (currentScore1.innerText = scoreA) : (currentScore2.innerText = scoreB);
   toggleTeam();
   init();
-  // console.log('A' + scoreA);
-  // console.log('B' + scoreB);
+  console.log('A' + scoreA);
+  console.log('B' + scoreB);
 }
 
 //toggle team
@@ -156,25 +169,17 @@ document.getElementById("restart").addEventListener("click", reset);
 function reset() {
   init();
   teamTurn = 1;
+  modalScore.style.display = "none"
 }
 
-//instruction
-// document
-//   .getElementById("inst")
-//   .addEventListener(
-//     "click",
-//     (document.getElementById("modalInst").style.display = "block")
-//   );
-// function reset() {
 
 inst.onclick = function () {
   modalInst.style.display = "block";
 };
 
-//     document.getElementById("init").style.display = "block";
-
-// }
-
+modalRestart.addEventListener('click',reset);
+// modalRestart.addEventListener('click',function(){modalInst.style.display = "none"})
+ 
 init();
 
 /////////NOTES:
