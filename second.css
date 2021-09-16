@@ -1,285 +1,298 @@
 body {
-    /* 960 h 720 w */
-    background-image: url("img/background.png");
-    width: 850px;
-    height: 800px;
-    margin: auto;
-    color: #7a77de;
-    /* color: #ddc2e4; */
+  /* 960 h 720 w */
+  background-image: url("img/background.png");
+  width: 850px;
+  height: 800px;
+  margin: auto;
+  color: #7a77de;
+  /* color: #ddc2e4; */
 }
 
 button {
-    background-color: #ddc2e4;
-    /* rgb(173, 187, 245) */
-    color: white;
-    border: 3px dotted;
-    font-size: 20px;
-    padding: 5px;
+  background-color: #ddc2e4;
+  /* rgb(173, 187, 245) */
+  color: white;
+  border: 3px dotted;
+  font-size: 20px;
+  padding: 5px;
 }
 
 .window {
-    background-color: #ddc2e4;
-    height: 250px;
-    border: 5px solid #7a77de;
-    padding:0;
-    margin-bottom: 25px;
-    margin-top: 20px;
+  background-color: #ddc2e4;
+  height: 250px;
+  border: 5px solid #7a77de;
+  padding: 0;
+  margin-bottom: 25px;
+  margin-top: 20px;
 }
 
 .topRow {
-    margin: 0 ;
-    height: 20%;
-    font-size: 30px;
-    margin-left: 10px;
-    border-bottom: 5px solid #7a77de;
+  margin: 0;
+  height: 20%;
+  font-size: 30px;
+  margin-left: 10px;
+  border-bottom: 5px solid #7a77de;
 }
 
 .bottomRow {
-    /* background-color: white; */
-    background-color: #95b4b8;
-    height: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border-bottom: 5px solid #7a77de;
+  /* background-color: white; */
+  background-color: #95b4b8;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 5px solid #7a77de;
 }
 
 #home {
-    /* background-color: darkgoldenrod; */
-    height: 100%;
-    width: 33%;
-    text-align: center;
-    font-size: 40px;
-    margin: 0 auto;
-    border-right: 5px solid #7a77de;;
-    
+  /* background-color: darkgoldenrod; */
+  height: 100%;
+  width: 33%;
+  text-align: center;
+  font-size: 40px;
+  margin: 0 auto;
+  border-right: 5px solid #7a77de;
 }
 #guest {
-    /* background-color: #ddc2e5; */
-    height: 100%;
-    width: 33%;
-    text-align: center;
-    font-size: 40px;
-    margin: 0 auto;
-    border-left: 5px solid #7a77de;;
+  /* background-color: #ddc2e5; */
+  height: 100%;
+  width: 33%;
+  text-align: center;
+  font-size: 40px;
+  margin: 0 auto;
+  border-left: 5px solid #7a77de;
 }
 
 #timer {
-    /* background-color:gray; */
-    height: 100%;
-    width: 33%;
+  /* background-color:gray; */
+  height: 100%;
+  width: 33%;
 }
 
 .timerContainer {
-    width: 100%;
-    height: 280px;
-    text-align: center;
-    font-size: 60px;
-    margin: auto;
-    /* background-color: tiiiiieal; */
+  width: 100%;
+  height: 280px;
+  text-align: center;
+  font-size: 60px;
+  margin: auto;
+  /* background-color: tiiiiieal; */
 }
-#clock{
-    background-image: url("img/clock.png");
-    background-size: contain;
-     background-repeat: no-repeat;
-     background-position: center;
-     height: 60%;
-     width: 60%;
-     margin: 0 auto;
+#clock {
+  background-image: url("img/clock.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60%;
+  width: 60%;
+  margin: 0 auto;
 }
 
 #time {
-    width: 80%;
-    height: 40%;
-    text-align: center;
-    font-size: 60px;
-    margin: 0 auto;
+  width: 80%;
+  height: 40%;
+  text-align: center;
+  font-size: 60px;
+  margin: 0 auto;
 }
 #img {
-    width: 800px;
-    height: 800px;
-    text-align: center;
-    margin: auto;
+  width: 800px;
+  height: 800px;
+  text-align: center;
+  margin: auto;
 }
-#currentScore1, #currentScore2 {
-    width: 80%;
-    height: 40%;
-    text-align: center;
-    font-size: 60px;
-    margin: 0 auto;
+#currentScore1,
+#currentScore2 {
+  width: 80%;
+  height: 40%;
+  text-align: center;
+  font-size: 60px;
+  margin: 0 auto;
 }
-
 
 #init {
-    text-align: center;
-    background-color: rgb(173, 187, 245);
-    color: white;
-    border: 3px dotted;
-    font-size: 20px;
-    margin: 5px auto;
-    padding: 5px 10px;
-    cursor: pointer;
+  text-align: center;
+  background-color: rgb(173, 187, 245);
+  color: white;
+  border: 3px dotted;
+  font-size: 20px;
+  margin: 5px auto;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 /* Card section */
 .cardContainer {
-    /* background-color: purple; */
-    height: 320px;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 10px;
-    margin: auto;
+  /* background-color: purple; */
+  height: 320px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin: auto;
 }
 
-   #card2 {
-     /* background-color: #f0c079; */
-     background-image: url("img/blank2.png");
-     background-size: contain;
-     background-repeat: no-repeat;
-     background-position: center;
-     width: 30%;
-     height: 100%;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-    align-items: center;
-     margin: 0;
-     border-top: 5px solid #7a77de;
-     border-bottom: 5px solid #7a77de;
-   }
+#card2 {
+  /* background-color: #f0c079; */
+  background-image: url("img/blank2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  border-top: 5px solid #7a77de;
+  border-bottom: 5px solid #7a77de;
+}
 
-   #card1, #card3 {
-       /* background-color: skyblue; */
-    background-image: url("img/side2.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 30%;
-    height: 100%; 
-    border: 5px solid #7a77de;
- }
- 
-  #easy, #medium, #hard {
-    background-color: white;
-    color: #7a77de;
-    border-radius: 15px;
-    width: 65%;
-    height: 35px;
-    margin: 5px auto;
-    font-size: 20px;
-    text-align: center;
-    cursor: pointer;
-  }
+#card1,
+#card3 {
+  /* background-color: skyblue; */
+  background-image: url("img/side2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30%;
+  height: 100%;
+  border: 5px solid #7a77de;
+}
 
-  #scoreBoard {
-    /* background-color: rgb(186, 235, 224); */
-    width: 100%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 30px;
-  }
+#easy,
+#medium,
+#hard {
+  background-color: white;
+  color: #7a77de;
+  border-radius: 15px;
+  width: 170px;
+  height: 35px;
+  margin: 5px auto;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
 
+#scoreBoard {
+  /* background-color: rgb(186, 235, 224); */
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
 
-  #score1, #score2 {
-      /* width: 40%;
+#score1,
+#score2 {
+  /* width: 40%;
       height: 40%; */
-      text-align: center;
-      margin: auto;
-      padding: 10px 20px;
-      font-size: 30px;
-      /* background-color: rgb(186, 235, 224); */
-      border: 2px solid #7a77de;
-  }
+  text-align: center;
+  margin: auto;
+  padding: 10px 20px;
+  font-size: 30px;
+  /* background-color: rgb(186, 235, 224); */
+  border: 2px solid #7a77de;
+}
 
-  /* Answer Option */
-   .answerBoard {
-    /* background-color: wheat; */
-    width: 100%;
-    height: 200px;
-    display: flex;
-    flex-direction: row;
-   }
-   #giveupContainer{
-    width: 70%;
-    height: 70%;
-    display: flex;
-    background-image: url("img/trash.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    justify-content: center;
-    align-items: center;
-    /* background-color: black; */
-   }
-   #giveup {
-    /* width: 173px;
+/* Answer Option */
+.answerBoard {
+  /* background-color: wheat; */
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+}
+#giveupContainer {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  background-image: url("img/trash.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+}
+#giveup {
+  /* width: 173px;
     height: 42.5px; */
-    padding: 10px;
-    margin-top: 200px;
-    cursor: pointer;
-    /* slightly down...  */
-   }
+  padding: 10px;
+  margin-top: 200px;
+  cursor: pointer;
+  /* slightly down...  */
+}
 
-   #answerContainer{
-    width: 70%;
-    height: 70%;
-    background-image: url("img/trophy.png");
-    background-size: contain;
-     background-repeat: no-repeat;
-     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: white; */
-   }
+#answerContainer {
+  width: 70%;
+  height: 70%;
+  background-image: url("img/trophy.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+}
 
-   #answer {
-    /* margin: 30px 0px auto;  */
-    padding: 10px;
-    margin-top: 200px;
-    cursor: pointer;
-   }
-
+#answer {
+  /* margin: 30px 0px auto;  */
+  padding: 10px;
+  margin-top: 200px;
+  cursor: pointer;
+}
 
 /* Restart */
-   #sideContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    right: 0px;
-    top: 0px;
-
-   }
-   #restart {
-    text-align: right;
-    margin: auto;
-    padding: 10px;
-    background-color: grey;
+#sideContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 0px;
+  top: 0px;
 }
-#inst { 
-    text-align: right;
-    margin: auto;
-    padding: 10px;
-    background-color:lightskyblue;
+#restart {
+  text-align: right;
+  margin: auto;
+  padding: 10px;
+  background-color: grey;
+}
+#inst {
+  text-align: right;
+  margin: auto;
+  padding: 10px;
+  background-color: lightskyblue;
 }
 
 .modal {
+  height: 400px;
+  width: 400px;
+  font-size: 50px;
+  float: initial;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+#modalInst {
+    display: none; /* Hidden by default */
     height: 400px;
     width: 400px;
     font-size: 50px;
     float: initial;
     position: fixed;
     top: 50%;
-    left: 50%; 
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-}
+  }
 
 .hidden {
-    display: none;
+  display: none;
 }
