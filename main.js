@@ -12,7 +12,9 @@
 // stopping clicking fn doens't work.  -> to prevent people from clicking multiple words, multiple time. 
 //I need to force quit timer
 // team switch -> how to recogznie better
-
+//I want to have instruction modal
+// I want team's turn will be lit up.
+// round = arr.length--
 
 //in the future, I probably could write an array to create div per word instead of having 3 html divs. so it can be scaled up. 
 //set 3 main variable
@@ -70,7 +72,7 @@ function gameEnd() {
   document.querySelector('.modal').classList.remove('hidden')
   //buttono to restart and hide the modal again when clicked
   // ternary instead of doing alert, it will change meesageEl .
-  
+
 }
 
 //3. Genera random fn
@@ -133,21 +135,20 @@ document.getElementById('giveup').addEventListener('click', giveup)
 function giveup(){
    init();
    toggleTeam();
-    console.log(teamTurn);
+  //  console.log('A' + scoreA);
+  //   console.log('B' + scoreB);
 }
 
 //I GOT the answer: pass turn + 1 to whomever turn it was. 
 document.getElementById('answer').addEventListener('click', won)
-function won(){
-    scoreA += 1;
-    current_score1.innerText = scoreA;
+function won(team){
+  teamTurn >0 ? scoreA += 1 : scoreB += 1;
+  teamTurn >0 ? current_score1.innerText = scoreA : current_score2.innerText = scoreB;
     toggleTeam();
     init ();
-    console.log(scoreA);
-    console.log(countdown)
+    // console.log('A' + scoreA);
+    // console.log('B' + scoreB);
 }
-//need for score B, but there must be a better way to do both in one fn. å
-
 
 //toggle team 
 function toggleTeam() {
@@ -155,7 +156,11 @@ function toggleTeam() {
   }
 
 //second type of click : reset
-document.getElementById('restart').addEventListener('click', init);  
+document.getElementById('restart').addEventListener('click',reset)
+function reset(){
+  init()
+  teamTurn = 1;
+}
 
 init()
 
