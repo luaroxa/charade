@@ -9,30 +9,34 @@
 //favicon
 
 //pop up of welcome to Chrade when first come in.
-//winner logic  (or end of game logic)
 ///SOOUND !
 //read me
-//I want to have instruction modal
+//write instruction
 // I want team's turn will be lit up.
 // round = arr.length--
 
-//set 3 main variable
+
+
 let teamTurn = 1; //player 1
-let winner;
-let scoreA = 0;
-let scoreB = 0;
 let timerRunning = false;
 let countdown;
+
+//modal 
 var inst = document.getElementById("inst");
 var modalInst = document.getElementById("modalInst");
 var modalScore = document.querySelector(".modalScore")
 var modalRestart= document.querySelector(".modalRestart")
 var scoreMsg = document.getElementById("scoreMsg")
 
+//score
 let scoreBoard = document.getElementById("scoreBoard");
 let currentScore1 = document.getElementById("currentScore1")  
 let currentScore2 = document.getElementById("currentScore2")
-let answer = document.getElementById("answer");
+let scoreA = 0;
+let scoreB = 0;
+
+
+//words
 let easyEl = document.getElementById("easy");
 let mediumEl = document.getElementById("medium");
 let hardEl = document.getElementById("hard");
@@ -58,36 +62,25 @@ function init() {
   wordEl.forEach((element) => (element.disabled = false));
 }
 // 2. user clicks on start button (team 1 goes)
-//???????????????? need to take game end out so they don't need to click init to figure out that it enedd. 
 document.getElementById("init").addEventListener("click", genWord);
 function genWord() {
-  
   easyEl.innerText = genRandom(genEasy) + ` ${dia}`;
   mediumEl.innerText = genRandom(genMedium) + ` ${dia}${dia}`;
   hardEl.innerText = genRandom(genHard) + ` ${dia}${dia}${dia}`;
   document.getElementById("init").style.display = "none";
 }
 
-//end logic -< broke
 function gameEnd() {
-//    ? alert("team A won") : alert("team B won");
   modalScore.classList.remove("hidden");
  if(scoreA === scoreB){
     scoreMsg.innerText = "It's a tie";
- } else if (scoreA > scoreB){
+ } else if (scoreA < scoreB){
     scoreMsg.innerText = "Guest won!";
  } else {
     scoreMsg.innerText = "Home won!";
- }
- }
+ }}
  
-  
-  
-  //buttono to restart and hide the modal again when clicked
-  // ternary instead of doing alert, it will change meesageEl .
-
-
-//3. Genera random fn
+//3. Genera random words fn
 function genRandom(arr) {
   return arr.splice(Math.floor(Math.random() * arr.length), 1);
 }
@@ -99,7 +92,6 @@ easyEl.addEventListener("click", function () {
   hardEl.innerText = "";
   wordEl.forEach((element) => (element.disabled = true));
 });
-
 
 mediumEl.addEventListener("click", function () {
   startTimer(45);
@@ -115,7 +107,6 @@ hardEl.addEventListener("click", function () {
   wordEl.forEach((element) => (element.disabled = true));
 });
 
-// mediumEl.addEventListener('click', function(){startTimer(45)})
 
 function startTimer(s) {
   let count = s;
@@ -135,7 +126,6 @@ function startTimer(s) {
     clearInterval(countdown);
   }
 }
-// end of timer fn.
 
 // I GIVE UP : passing turn
 document.getElementById("giveup").addEventListener("click", giveup);
@@ -143,11 +133,9 @@ function giveup() {
   init();
   toggleTeam();
   if (genHard.length === 0) return gameEnd();
-   console.log('A' + scoreA);
-    console.log('B' + scoreB);
 }
 
-//I GOT the answer: pass turn + 1 to whomever turn it was.
+// answer fn
 document.getElementById("answer").addEventListener("click", won);
 function won(team) {
     if (genHard.length === 0) return gameEnd();  
@@ -155,8 +143,6 @@ function won(team) {
   teamTurn > 0 ? (currentScore1.innerText = scoreA) : (currentScore2.innerText = scoreB);
   toggleTeam();
   init();
-  console.log('A' + scoreA);
-  console.log('B' + scoreB);
 }
 
 //toggle team
@@ -164,7 +150,7 @@ function toggleTeam() {
   teamTurn *= -1;
 }
 
-//second type of click : reset
+//Overall reset of the game.
 document.getElementById("restart").addEventListener("click", reset);
 function reset() {
   init();
@@ -172,26 +158,10 @@ function reset() {
   modalScore.style.display = "none"
 }
 
-
-inst.onclick = function () {
-  modalInst.style.display = "block";
-};
-
+//insdie ScoreModal: closing modal + restarting the game.
 modalRestart.addEventListener('click',reset);
-// modalRestart.addEventListener('click',function(){modalInst.style.display = "none"})
+
+//opening instruction modal window
+modalInst.addEventListener('click',function(){modalInst.style.display = "block"})
  
 init();
-
-/////////NOTES:
-//working clicker ex.
-// answer.addEventListener('click', startTimer)
-// function startTimer(){
-// a = words;
-// console.log(a)
-// }
-
-//   intro = [
-//     ['choose']
-//     ['your']
-//     ['words!']
-// ]

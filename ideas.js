@@ -53,3 +53,12 @@ function genRandom(arr){
 mediumEl.innerText = `${genMedium[Math.floor(Math.random() *genMedium.length)]} XX`
 //after
 mediumEl.innerText = genRandom(genMedium) + 'XX'
+
+//alert in ternary
+//    ? alert("team A won") : alert("team B won");
+
+
+// TWO ways to write 
+modalRestart.addEventListener('click',reset);
+//OR 
+modalRestart.addEventListener('click',function(){modalInst.style.display = "none"})
