@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charade</title>
-    <link rel="stylesheet" href="main.css">
-    <script defer src="main.js"></script>
+    <title>second</title>
+    <link rel="stylesheet" href="second.css">
+    <script defer src="second.js"></script>
 
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -16,17 +16,35 @@
 
 <body>
     <div class="modal hidden">hehehe</div>
-   <h1>Welcome to charades!</h1>
-   <div class="timerContainer">
-       <div id="clock"></div>
+   
+<div class="window">
+<div class="topRow"> Welcome to charades!</div>
+
+<div class="bottomRow">
+    <div id="home">
+       <p> HOME </p>
+       <div id="currentScore1"> 0 </div>
+    </div>
+    <div id="timer">
+        <div id="clock"></div>
     <div id="time">00:00</div>
+    </div>
+    <div id="guest">
+        <p> GUEST </p>
+        <div id="currentScore2"> 0 </div>
+    </div>
+</div>
+</div>
+
+
+   <!-- <div class="timerContainer"> -->
     <!-- <div> Count down starts <span id="time">05:00</span> seconds!</div> -->
-   </div>
+   <!-- </div>
    <div id="scoreBoard">  
     <div id="score1"> Team 1 : <span id="current_score1"> 0 </span> !</div>
-    <div id="score2"> Team 2 : <span id="current_score2"> 0 </span> !</div>
+    <div id="score2"> Team 2 : <span id="current_score2"> 0 </span> !</div> -->
  <!-- when I click on I got the answer, the current player's needs to go up.and start the next game. -->
-</div> 
+<!-- </div>  -->
 
 <div class="cardContainer"> 
     <div id="card1">
@@ -50,10 +68,8 @@
 <div id=answerContainer><button id="answer">I got the answer !</button> </div>
 </div>
 
-
-<div id=restartContainer>
-    <div class="restart"> <button id="restart">Restart</button> </div>
-    </div>
-
+<div id=sideContainer>
+    <div class="instruction"> <button id="inst">?</button> </div>
+<div class="restart"> <button id="restart">Restart</button> </div>
 </body>
 </html>
