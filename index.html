@@ -4,56 +4,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charade</title>
+    <title>&#x1F984 Charades </title>
     <link rel="stylesheet" href="main.css">
     <script defer src="main.js"></script>
-
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest"> -->
 </head>
 
 <body>
-    <div class="modal hidden">hehehe</div>
-   <h1>Welcome to charades!</h1>
-   <div class="timerContainer">
-       <div id="clock"></div>
+    <div class="modalFinalScore hidden">
+        <p id="scoreMsg"> Something Went Wrong !</p>
+        <button class="modalRestart" id="restart">Restart</button>
+    </div>
+   <!--top container   -->
+<div class="window">
+<div class="topRow"> Welcome to charades!</div>
+
+<div class="bottomRow">
+    
+    <div id="home">
+       <p id="windowP"> HOME </p>
+       <div id="ScoreH"> 0 </div>
+    </div>
+
+
+    <div id="timerContainer">
+        <div id="clock"></div>
     <div id="time">00:00</div>
-    <!-- <div> Count down starts <span id="time">05:00</span> seconds!</div> -->
-   </div>
-   <div id="scoreBoard">  
-    <div id="score1"> Team 1 : <span id="current_score1"> 0 </span> !</div>
-    <div id="score2"> Team 2 : <span id="current_score2"> 0 </span> !</div>
- <!-- when I click on I got the answer, the current player's needs to go up.and start the next game. -->
+    <div class="roundContainer"> Round <span id=round> 0 </span></div>
+    </div>
+
+    <div id="guest">
+        <p id="windowP"> GUEST </p>
+        <div id="ScoreG"> 0 </div>
+    </div>
+
+    <!-- window and bottom  -->
+</div>
 </div> 
 
 <div class="cardContainer"> 
     <div id="card1">
+        <div id=giveupContainer><button id="giveup">I give up!</button> </div>
     </div>
     <div id="card2">
         <br>
-        <button id="init">Click here to start!</button> <br><br>
+        <button id="shuffle"> Shuffle </button> <br><br>
         <button class= "word" id="easy"></button> 
         <button class= "word" id="medium"></button>  
         <button class= "word" id="hard"></button> 
-      <!-- <div class = "word" id="easy"></div>
-      <div class = "word" id="medium"></div>
-      <div class = "word" id="hard"></div> -->
     </div>
-    <div id="card3"></div>
+    <div id="card3">
+        <div id=answerContainer><button id="answer">I got the answer !</button> </div>
+    </div>
 </div>
 
+<div id=sideContainer>
+    <div class="side" id="decor"></div>
 
-<div class="answerBoard">
-<div id=giveupContainer><button id="giveup">I give up!</button> </div>
-<div id=answerContainer><button id="answer">I got the answer !</button> </div>
+
+    <button class="side" id="inst"> How to Play 
+        <div class="modalInst" id="modalInst">
+    
+            <div class="instTop"> Instruction </div>
+                
+                <div class="instBottom">
+                       <p id="instContent"> 
+                           1) Pick Team Home & Guest. Team Home will go first. </br></br>
+                           2) You will each have 3 rounds to play charades.</br></br>
+                           3) Click on <i>Shuffle</i> button to see your word choices. </br>
+                           *** Each word has different level of difficulty! ***</br>
+                           ** &#x1f48e = Easy &#x1f48e&#x1f48e = Medium  &#x1f48e&#x1f48e&#x1f48e = Hard **</br></br>
+                           4) Select your word.</br></br>
+                           5) Do your best acting! </br></br></br>
+                           GOOD LUCK!
+<div id="instClose">Close</div>
+                            </p>
+        
+                    </div>
+
+
+
+
+    
+    </button>
+
+
+
+
+
+    <div class="side" id="decor"></div>
+<button class="side" id="restart2">Restart</button>
+
 </div>
-
-
-<div id=restartContainer>
-    <div class="restart"> <button id="restart">Restart</button> </div>
-    </div>
 
 </body>
 </html>

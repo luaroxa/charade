@@ -1,0 +1,206 @@
+h1 {
+    text-align: center;
+}
+
+body {
+    /* 960 h 720 w */
+    background-image: url("img/background.png");
+    width: 850px;
+    height: 680px;
+    margin: auto;
+    color: #7a77de;
+    /* color: #ddc2e4; */
+}
+
+button {
+    background-color: #ddc2e4;
+    /* rgb(173, 187, 245) */
+    color: white;
+    border: 3px dotted;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.timerContainer {
+    width: 100%;
+    height: 280px;
+    text-align: center;
+    font-size: 60px;
+    margin: auto;
+    /* background-color: tiiiiieal; */
+}
+#clock{
+    background-image: url("img/clock.png");
+    background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+     height: 90%;
+     width: 90%;
+     margin: 0 auto;
+}
+#img {
+    width: 800px;
+    height: 800px;
+    text-align: center;
+    margin: auto;
+}
+
+#init {
+    text-align: center;
+    background-color: rgb(173, 187, 245);
+    color: white;
+    border: 3px dotted;
+    font-size: 20px;
+    margin: 5px auto;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Card section */
+.cardContainer {
+    /* background-color: purple; */
+    height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+   #card2 {
+     /* background-color: #f0c079; */
+     background-image: url("img/blank2.png");
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+     width: 33%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+    align-items: center;
+     margin: 0;
+     border: 5px solid #7a77de;
+   }
+
+   #card1, #card3 {
+       /* background-color: skyblue; */
+    background-image: url("img/side2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 33%;
+    height: 100%; 
+    border: 5px solid #7a77de;
+ }
+ 
+  #easy, #medium, #hard {
+    background-color: white;
+    color: #7a77de;
+    border-radius: 15px;
+    width: 65%;
+    height: 35px;
+    margin: 5px auto;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  #scoreBoard {
+    /* background-color: rgb(186, 235, 224); */
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+
+  #score1, #score2 {
+      /* width: 40%;
+      height: 40%; */
+      text-align: center;
+      margin: auto;
+      padding: 10px 20px;
+      font-size: 30px;
+      /* background-color: rgb(186, 235, 224); */
+      border: 2px solid #7a77de;
+  }
+
+  /* Answer Option */
+   .answerBoard {
+    /* background-color: wheat; */
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+   }
+   #giveupContainer{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    background-image: url("img/trash.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+   }
+   #giveup {
+    /* width: 173px;
+    height: 42.5px; */
+    padding: 10px;
+    margin-top: 200px;
+    cursor: pointer;
+    /* slightly down...  */
+   }
+
+   #answerContainer{
+    width: 70%;
+    height: 70%;
+    background-image: url("img/trophy.png");
+    background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+   }
+
+   #answer {
+    /* margin: 30px 0px auto;  */
+    padding: 10px;
+    margin-top: 200px;
+    cursor: pointer;
+   }
+
+
+/* Restart */
+   #restartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   #restart {
+    text-align: right;
+    margin: 30px 0px auto;
+    padding: 10px;
+    background-color: grey;
+}
+
+.modal {
+    height: 400px;
+    width: 400px;
+    font-size: 50px;
+    float: initial;
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.hidden {
+    display: none;
+}

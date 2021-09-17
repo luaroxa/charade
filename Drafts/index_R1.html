@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charade</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest"> -->
+</head>
+
+<body>
+    <div class="modal hidden">hehehe</div>
+   <h1>Welcome to charades!</h1>
+   <div class="timerContainer">
+       <div id="clock"></div>
+    <div id="time">00:00</div>
+    <!-- <div> Count down starts <span id="time">05:00</span> seconds!</div> -->
+   </div>
+   <div id="scoreBoard">  
+    <div id="score1"> Team 1 : <span id="current_score1"> 0 </span> !</div>
+    <div id="score2"> Team 2 : <span id="current_score2"> 0 </span> !</div>
+ <!-- when I click on I got the answer, the current player's needs to go up.and start the next game. -->
+</div> 
+
+<div class="cardContainer"> 
+    <div id="card1">
+    </div>
+    <div id="card2">
+        <br>
+        <button id="init">Click here to start!</button> <br><br>
+        <button class= "word" id="easy"></button> 
+        <button class= "word" id="medium"></button>  
+        <button class= "word" id="hard"></button> 
+      <!-- <div class = "word" id="easy"></div>
+      <div class = "word" id="medium"></div>
+      <div class = "word" id="hard"></div> -->
+    </div>
+    <div id="card3"></div>
+</div>
+
+
+<div class="answerBoard">
+<div id=giveupContainer><button id="giveup">I give up!</button> </div>
+<div id=answerContainer><button id="answer">I got the answer !</button> </div>
+</div>
+
+
+<div id=restartContainer>
+    <div class="restart"> <button id="restart">Restart</button> </div>
+    </div>
+
+</body>
+</html>

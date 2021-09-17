@@ -1,12 +1,3 @@
-//ICE
-// 1) Let users choose their team names.
-// 2) Grab words data sample via API or let users type them in.
-// 3) Utilize an array to create div per word instead of having 3 html divs for possible scale up.
-// 4) Add favicon
-// 5) SOUND !
-// 6) Light up current player's name.
-//read me
-
 
 let teamTurn = 1; //player 1
 let timerRunning = false;
