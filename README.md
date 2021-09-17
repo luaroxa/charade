@@ -1,7 +1,6 @@
 [1] Unicorn Charades
 My friends and I like to play triple x chrades for fun. It can be sort of embrassing but also extremely entertaining. 
-We have the deck of card that comes with the game set with words to choose from, but we always use our phone to time ourselves.
-I thought it'd be nice to use a website to do the countdown for us. I also would like to add an option to make our own list of words to choose from in the future. 
+We have the deck of card that comes with the game set with words to choose from, but we always use our phone to time ourselves. I thought it'd be nice to use a website to do the countdown for us. I also would like to add an option to make our own list of words to choose from in the future. I enjoyed buildng this as my first project! 
 
 
 [2] Visual of Unicorn Charades
@@ -16,8 +15,7 @@ I thought it'd be nice to use a website to do the countdown for us. I also would
 
 
 [4] HOW TO:
-
-You can go to https://github.com/luaroxa/charade.git to find the game.
+You can go to https://luaroxa.github.io/charade/ to find the game.
 
 Instruction:
 This game essentially follows a very typical charade rules.
