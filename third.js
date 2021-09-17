@@ -3,30 +3,30 @@
 // 2) Grab words data sample via API or let users type them in.
 // 3) Utilize an array to create div per word instead of having 3 html divs for possible scale up.
 // 4) Add favicon
-// 5) SOOUND !
+// 5) SOUND !
+// 6) Light up current player's name.
 //read me
-//write instruction
-// I want team's turn will be lit up.
-// round = arr.length--
 
 
 let teamTurn = 1; //player 1
 let timerRunning = false;
 let countdown;
 
-//modal 
+//modal
 var inst = document.getElementById("inst");
 var modalInst = document.getElementById("modalInst");
-var modalFinalScore = document.querySelector(".modalFinalScore")
-var modalRestart= document.querySelector(".modalRestart")
-var scoreMsg = document.getElementById("scoreMsg")
+var modalFinalScore = document.querySelector(".modalFinalScore");
+var modalRestart = document.querySelector(".modalRestart");
+var scoreMsg = document.getElementById("scoreMsg");
+let close = document.getElementById("instClose");
 
 //score
-let ScoreElH = document.getElementById("ScoreH")  
-let ScoreElG = document.getElementById("ScoreG")
+let roundEl = document.getElementById("round");
+let round = 0;
+let ScoreElH = document.getElementById("ScoreH");
+let ScoreElG = document.getElementById("ScoreG");
 let scoreH = 0;
 let scoreG = 0;
-
 
 //words
 let easyEl = document.getElementById("easy");
@@ -41,40 +41,42 @@ const genMedium = ["Fruit", "Fungus", "Film", "Ice", "Garden", "Gate"];
 const genEasy = ["Mist", "Needle", "Onion", "Pants", "Rainbow", "Snail"];
 
 // 1. default setting:
-function init() {
+
+function init(){
+    teamTurn = 1;
+    scoreH = 0;
+    scoreG = 0;
+    ScoreElH.innerText = 0;
+    ScoreElG.innerText = 0;
+    roundEl.innerText = 0;
+    if (timerRunning) {
+        clearInterval(countdown);
+        timerRunning = false;
+      }
+      timeEl.innerText = `00:00`;
+      wordEl.forEach((element) => (element.disabled = false));
+}
+
+function shuffle() {
   easyEl.innerText = "";
   mediumEl.innerText = "";
   hardEl.innerText = "";
-  document.getElementById("init").style.display = "block";
-  if (timerRunning) {
-    clearInterval(countdown);
-    timerRunning = false;
-  }
-  timeEl.innerText = `00:00`;
-  wordEl.forEach((element) => (element.disabled = false));
+  document.getElementById("shuffle").style.display = "block";
 }
 // 2. user clicks on start button (team 1 goes)
-document.getElementById("init").addEventListener("click", genWord);
+document.getElementById("shuffle").addEventListener("click", genWord);
 function genWord() {
   easyEl.innerText = genRandom(genEasy) + ` ${dia}`;
   mediumEl.innerText = genRandom(genMedium) + ` ${dia}${dia}`;
   hardEl.innerText = genRandom(genHard) + ` ${dia}${dia}${dia}`;
-  document.getElementById("init").style.display = "none";
+  document.getElementById("shuffle").style.display = "none";
+  round += 1
+  roundEl.innerText = round
 }
 
-function gameEnd() {
-  modalFinalScore.classList.remove("hidden");
- if(scoreH === scoreG){
-    scoreMsg.innerText = "It's a tie";
- } else if (scoreH < scoreG){
-    scoreMsg.innerText = "Guest won!";
- } else {
-    scoreMsg.innerText = "Home won!";
- }}
- 
 //3. Genera random words fn
 function genRandom(arr) {
-  return arr.splice(Math.floor(Math.random() * arr.length), 1);
+    return arr.splice(Math.floor(Math.random() * arr.length), 1);
 }
 
 //3. user clicks on a word => starting timer.
@@ -99,7 +101,6 @@ hardEl.addEventListener("click", function () {
   wordEl.forEach((element) => (element.disabled = true));
 });
 
-
 function startTimer(s) {
   let count = s;
   timerRunning = true;
@@ -122,19 +123,31 @@ function startTimer(s) {
 // I GIVE UP : passing turn
 document.getElementById("giveup").addEventListener("click", giveup);
 function giveup() {
-  init();
+if (genHard.length === 0) return gameEnd();
+  shuffle();
   toggleTeam();
-  if (genHard.length === 0) return gameEnd();
+  
 }
 
 // answer fn
 document.getElementById("answer").addEventListener("click", won);
 function won(team) {
-    if (genHard.length === 0) return gameEnd();  
+  if (genHard.length === 0) return gameEnd();
   teamTurn > 0 ? (scoreH += 1) : (scoreG += 1);
   teamTurn > 0 ? (ScoreElH.innerText = scoreH) : (ScoreElG.innerText = scoreG);
   toggleTeam();
-  init();
+  shuffle();
+}
+
+function gameEnd() {
+  modalFinalScore.classList.remove("hidden");
+  if (scoreH === scoreG) {
+    scoreMsg.innerText = "It's a tie";
+  } else if (scoreH < scoreG) {
+    scoreMsg.innerText = "Guest won!";
+  } else {
+    scoreMsg.innerText = "Home won!";
+  }
 }
 
 //toggle team
@@ -145,15 +158,45 @@ function toggleTeam() {
 //Overall reset of the game.
 document.getElementById("restart").addEventListener("click", reset);
 function reset() {
+  shuffle();
   init();
-  teamTurn = 1;
-  modalFinalScore.style.display = "none"
+  modalFinalScore.style.display = "none";
+  console.log("what")
+}
+
+document.getElementById("restart2").addEventListener("click", reset);
+function reset() {
+  shuffle();
+  init();
+  modalFinalScore.style.display = "none";
+  console.log("what")
 }
 
 //insdie ScoreModal: closing modal + restarting the game.
-modalRestart.addEventListener('click',reset);
+modalRestart.addEventListener("click", reset);
 
-//opening instruction modal window
-modalInst.addEventListener('click',function(){modalInst.style.display = "block"})
- 
+
+
+//opening instruction modal window 
+inst.addEventListener("click", function () {
+  modalInst.style.display = "block";
+});
+
+//not working
+// document.getElementById("instClose").addEventListener("click", function() {
+//     modalInst.style.display = "none";
+//     console.log("why")
+//   });
+
+ close.addEventListener("click", pleaseclose)
+  function pleaseclose() {
+    modalInst.classList.add("hidden");
+    // modalInst.style.display = "none";
+    console.log("why")
+  };
+
+//   close.onclick = function() {
+//       modalInst.style.display = "none";
+//   }
+
 init();

@@ -21,7 +21,7 @@
 <div class="bottomRow">
     
     <div id="home">
-       <p> HOME </p>
+       <p id="windowP"> HOME </p>
        <div id="ScoreH"> 0 </div>
     </div>
 
@@ -33,7 +33,7 @@
     </div>
 
     <div id="guest">
-        <p> GUEST </p>
+        <p id="windowP"> GUEST </p>
         <div id="ScoreG"> 0 </div>
     </div>
 
@@ -47,7 +47,7 @@
     </div>
     <div id="card2">
         <br>
-        <button id="init"> Shuffle </button> <br><br>
+        <button id="shuffle"> Shuffle </button> <br><br>
         <button class= "word" id="easy"></button> 
         <button class= "word" id="medium"></button>  
         <button class= "word" id="hard"></button> 
@@ -57,18 +57,44 @@
     </div>
 </div>
 
-<!-- 
-<div class="optionContainer">
-<div id=giveupContainer><button id="giveup">I give up!</button> </div>
-<div id=answerContainer><button id="answer">I got the answer !</button> </div>
-</div> -->
-
 <div id=sideContainer>
     <div class="side" id="decor"></div>
-    <button class="side" id="inst"> How to Play <div class="hidden" id="modalInst">instruction</div></button>
+
+
+    <button class="side" id="inst"> How to Play 
+        <div class="modalInst" id="modalInst">
+    
+            <div class="instTop"> Instruction </div>
+                
+                <div class="instBottom">
+                       <p id="instContent"> 
+                           1) Pick Team Home & Guest. Team Home will go first. </br></br>
+                           2) You will each have 3 rounds to play charades.</br></br>
+                           3) Click on <i>Shuffle</i> button to see your word choices. </br>
+                           *** Each word has different level of difficulty! ***</br>
+                           ** &#x1f48e = Easy &#x1f48e&#x1f48e = Medium  &#x1f48e&#x1f48e&#x1f48e = Hard **</br></br>
+                           4) Select your word.</br></br>
+                           5) Do your best acting! </br></br></br>
+                           GOOD LUCK!
+<div id="instClose">Close</div>
+                            </p>
+        
+                    </div>
+
+
+
+
+    
+    </button>
+
+
+
+
+
     <div class="side" id="decor"></div>
-<button class="side" id="restart">Restart</button>
+<button class="side" id="restart2">Restart</button>
 
 </div>
+
 </body>
 </html>
