@@ -15,8 +15,20 @@ I thought it'd be nice to use a website to do the countdown for us. I also would
     5) Keynote program
 
 
-[4] This game follows a very typical charade rules.
+[4] HOW TO:
 
+This game follows a very typical charade rules.
+Instruction:
+ 1) Pick Team Home & Guest. Team Home will go first. 
+ 2) You will each have 3 rounds to play charades.
+ 3) Click on <i>Shuffle</i> button to see your word choices. 
+*** Each word has different level of difficulty! ***
+** 1 diamond = Easy,  2 diamons = Medium,  2 diamons = Hard **
+4) Select your word and appropriate timer will start.
+5) Do your best acting! 
+6) If your team got it right, click on "I got the answer!" if not click on "I give up!".
+7) You can always press "Restart" button to start from the top. 
+                           
 
 [5] ICEBOX ITEMS for the futture:
     1) Let users choose their team names.

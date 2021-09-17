@@ -1,5 +1,5 @@
+/* General Styling */
 body {
-  /* 960 h 720 w */
   background-image: url("img/background.png");
   width: 850px;
   height: 800px;
@@ -9,6 +9,8 @@ body {
 button {
   font-family: inherit;
 }
+
+/* Top Window */
 .window {
   background-color: #ddc2e4;
   height: 260px;
@@ -16,31 +18,24 @@ button {
   padding: 0;
   margin-top: 50px;
 }
-
 .topRow {
   margin: 0;
   height: 20%;
   font-size: 30px;
   padding-left: 20px;
   padding-top: 8px;
-  /* border-bottom: 5px solid #7a77de; */
 }
-
 .bottomRow {
-  /* background-color: white; */
   background-color: #95b4b8;
   height: 200px;
   flex-direction: row;
   display: flex;
   color: white;
   justify-content: space-around;
-  /* border-bottom: 5px solid #7a77de; */
 }
-
 #windowP {
   margin-bottom: 0px;
 }
-
 #home,
 #guest {
   height: 50%;
@@ -54,14 +49,13 @@ button {
   height: 50%;
 }
 
+/* Timer */
 #timerContainer {
-  /* background-color:gray; */
   height: 100%;
   width: 33%;
   display: flex;
   flex-direction: column;
 }
-
 #clock {
   background-image: url("img/clock.png");
   background-size: contain;
@@ -71,7 +65,6 @@ button {
   width: 60%;
   margin: 0 auto;
 }
-
 #time {
   width: 80%;
   height: 40%;
@@ -85,7 +78,6 @@ button {
   text-align: center;
   margin: auto;
 }
-
 .roundContainer {
   width: 80%;
   height: 40%;
@@ -93,7 +85,6 @@ button {
   font-size: 20px;
   margin: 0 auto;
 }
-
 #ScoreH,
 #ScoreG {
   width: 80%;
@@ -103,18 +94,19 @@ button {
   margin: 0 auto;
 }
 
-#shuffle {
-  text-align: center;
-  background-color: rgb(173, 187, 245);
-  color: white;
-  border: 3px dotted;
-  font-size: 20px;
-  margin: 5px auto;
-  padding: 5px 10px;
-  cursor: pointer;
-}
 
-/* Card section */
+/* Main Card Section */
+#shuffle {
+    text-align: center;
+    background-color: rgb(173, 187, 245);
+    color: white;
+    border: 3px dotted;
+    font-size: 20px;
+    margin: 5px auto;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
 .cardContainer {
   height: 320px;
   width: 90%;
@@ -157,9 +149,9 @@ button {
   border: 3px dotted #cca8e0;
 }
 
-/* Answer Option */
+/* Answer Options */
+
 .optionContainer {
-  /* background-color: wheat; */
   width: 100%;
   height: 200px;
   display: flex;
@@ -189,7 +181,6 @@ button {
   border: 3px dotted #cca8e0;
   border-radius: 15px;
 }
-
 #answerContainer {
   background-image: url("img/trophy.png");
 }
@@ -197,13 +188,13 @@ button {
   background-image: url("img/trash.png");
 }
 
+/* Final Score Modal */
 .modalFinalScore {
   height: 250px;
   width: 650px;
   font-size: 25px;
   color: white;
   border: 5px solid white;
-
   text-align: center;
   float: initial;
   position: fixed;
@@ -213,10 +204,7 @@ button {
   background-position-x: 0px;
   margin: 0;
   padding: 0;
-
-  
 }
-
 .mfsTop {
   background-color: #ddc2e4;
   width: 100%;
@@ -241,9 +229,10 @@ button {
     font-size: 30 px;
 }
 
+/* Instruction Modal */
 #modalInst {
   display: none;
-  height: 550px;
+  height: 700px;
   width: 1100px;
   font-size: 50px;
   float: initial;
@@ -255,32 +244,28 @@ button {
   color: white;
   border: 5px solid white;
 }
-
 .instTop {
   background-color: #ddc2e4;
   width: 100%;
   height: 10%;
-  padding-bottom: 5px;
+  padding-top: 10px;
   border-bottom: 5px solid white;
 }
-
 .instBottom {
   background-color: #95b4b8;
   width: 100%;
-  height: 485px;
+  height: 620px;
   border-bottom: 5px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 #instContent {
   margin: 0px;
   padding-top: 100px;
   font-size: 25px;
 }
-
 #instClose {
   background-color: #f7dbf0;
   text-align: center;
@@ -290,11 +275,11 @@ button {
   height: 100px;
   margin-top: 15px;
 }
-
 .hidden {
   display: none;
 }
 
+/* Extra Menu */
 #sideContainer {
   width: 65%;
   height: 30px;
@@ -302,7 +287,6 @@ button {
   display: flex;
   flex-direction: row;
 }
-
 .side,
 #restart2,
 #inst {
@@ -314,17 +298,14 @@ button {
   background-color: lightcoral;
   padding: 0px;
 }
-
 #decor {
   background-color: #f7dbf0;
 }
-
 #inst,
 #restart1,
 #restart2 {
   border: none;
 }
-
 #restart1 {
     text-align: center;
     color: white;

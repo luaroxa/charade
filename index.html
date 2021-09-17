@@ -10,53 +10,37 @@
 </head>
 
 <body>
-
     <div class="modalFinalScore hidden">
-
      <div class="mfsTop"> Great Job !</div>
-                <div class="mfsBottom">
-                        <p id="scoreMsg"> Something Went Wrong !</p>
-
+        <div class="mfsBottom">
+        <p id="scoreMsg"> Something Went Wrong !</p>
         <button class="modalRestart" id="restart1">Restart</button>
-    
+        </div>
     </div>
-    </div>
 
-
-
-   <!--top container   -->
 <div class="window">
-<div class="topRow"> Welcome to charades!</div>
-
-<div class="bottomRow">
-    
-    <div id="home">
-       <p id="windowP"> HOME </p>
-       <div id="ScoreH"> 0 </div>
+    <div class="topRow"> Welcome to charades!</div>
+    <div class="bottomRow">  
+        <div id="home">
+        <p id="windowP"> HOME </p>
+        <div id="ScoreH"> 0 </div>
     </div>
-
-
     <div id="timerContainer">
-        <div id="clock"></div>
-    <div id="time">00:00</div>
-    <div class="roundContainer"> Round <span id=round> 0 </span></div>
+            <div id="clock"></div>
+            <div id="time">00:00</div>
+            <div class="roundContainer"> Round <span id=round> 0 </span></div>
     </div>
-
-    <div id="guest">
-        <p id="windowP"> GUEST </p>
-        <div id="ScoreG"> 0 </div>
-    </div>
-
-    <!-- window and bottom  -->
-</div>
+     <div id="guest">
+         <p id="windowP"> GUEST </p>
+         <div id="ScoreG"> 0 </div>
+     </div>
 </div> 
 
 <div class="cardContainer"> 
     <div id="card1">
         <div id=giveupContainer><button id="giveup">I give up!</button> </div>
     </div>
-    <div id="card2">
-        <br>
+    <div id="card2"><br>
         <button id="shuffle"> Shuffle </button> <br><br>
         <button class= "word" id="easy"></button> 
         <button class= "word" id="medium"></button>  
@@ -69,11 +53,8 @@
 
 <div id=sideContainer>
     <div class="side" id="decor"></div>
-
-
     <button class="side" id="inst"> How to Play 
         <div class="modalInst" id="modalInst">
-    
             <div class="instTop"> Instruction </div>
                 
                 <div class="instBottom">
@@ -84,27 +65,17 @@
                            *** Each word has different level of difficulty! ***</br>
                            ** &#x1f48e = Easy &#x1f48e&#x1f48e = Medium  &#x1f48e&#x1f48e&#x1f48e = Hard **</br></br>
                            4) Select your word.</br></br>
-                           5) Do your best acting! </br></br></br>
+                           5) Do your best acting! </br></br>
+                           6) If your team got it right, click on "I got the answer!" if not click on "I give up!".</br></br>
+                           7) You can always press "Restart" button to start from the top. </br></br></br>
                            GOOD LUCK!
-<div id="instClose">Close</div>
-                            </p>
-        
-                    </div>
-
-
-
-
-    
+                        <div id="instClose">Close</div>
+                        </p>
+                </div>
+        </div>
     </button>
-
-
-
-
-
-    <div class="side" id="decor"></div>
+<div class="side" id="decor"></div>
 <button class="side" id="restart2">Restart</button>
-
 </div>
-
 </body>
 </html>

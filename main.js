@@ -1,17 +1,15 @@
-
-let teamTurn = 1; //player 1
+let teamTurn = 1; 
 let timerRunning = false;
 let countdown;
+let dia = String.fromCodePoint(0x1f48e);
 
-//modal
-var inst = document.getElementById("inst");
-var modalInst = document.getElementById("modalInst");
-var modalFinalScore = document.querySelector(".modalFinalScore");
-var modalRestart = document.querySelector(".modalRestart");
-var scoreMsg = document.getElementById("scoreMsg");
+let inst = document.getElementById("inst");
+let modalInst = document.getElementById("modalInst");
+let modalFinalScore = document.querySelector(".modalFinalScore");
+let modalRestart = document.querySelector(".modalRestart");
+let scoreMsg = document.getElementById("scoreMsg");
 let close = document.getElementById("instClose");
 
-//score
 let roundEl = document.getElementById("round");
 let round = 0;
 let ScoreElH = document.getElementById("ScoreH");
@@ -19,20 +17,17 @@ let ScoreElG = document.getElementById("ScoreG");
 let scoreH = 0;
 let scoreG = 0;
 
-//words
 let easyEl = document.getElementById("easy");
 let mediumEl = document.getElementById("medium");
 let hardEl = document.getElementById("hard");
 let timeEl = document.getElementById("time");
 let wordEl = document.querySelectorAll(".word");
-let dia = String.fromCodePoint(0x1f48e);
 
 const genHard = ["Compass", "Crystal", "Cup", "Diamond", "Fan", "Game"];
 const genMedium = ["Fruit", "Fungus", "Film", "Ice", "Garden", "Gate"];
 const genEasy = ["Mist", "Needle", "Onion", "Pants", "Rainbow", "Snail"];
 
-// 1. default setting:
-
+// Initial state of the game
 function init(){
     teamTurn = 1;
     scoreH = 0;
@@ -41,7 +36,6 @@ function init(){
     ScoreElG.innerText = 0;
     roundEl.innerText = 0;
     clearTime();
-    
 }
 
 function clearTime(){
@@ -60,7 +54,8 @@ function shuffle() {
   document.getElementById("shuffle").style.display = "block";
   clearTime();
 }
-// 2. user clicks on start button (team 1 goes)
+
+//user clicks on play the game
 document.getElementById("shuffle").addEventListener("click", genWord);
 function genWord() {
   easyEl.innerText = genRandom(genEasy) + ` ${dia}`;
@@ -71,12 +66,12 @@ function genWord() {
   roundEl.innerText = round
 }
 
-//3. Genera random words fn
+// choosing random words
 function genRandom(arr) {
     return arr.splice(Math.floor(Math.random() * arr.length), 1);
 }
 
-//3. user clicks on a word => starting timer.
+// countdown per difficulty
 easyEl.addEventListener("click", function () {
   startTimer(30);
   mediumEl.innerText = "";
@@ -98,6 +93,7 @@ hardEl.addEventListener("click", function () {
   wordEl.forEach((element) => (element.disabled = true));
 });
 
+// countown function
 function startTimer(s) {
   let count = s;
   timerRunning = true;
@@ -112,21 +108,19 @@ function startTimer(s) {
 
   function timeUp() {
     timerRunning = false;
-    console.log("timesup");
     clearInterval(countdown);
   }
 }
 
-// I GIVE UP : passing turn
+// passing turn
 document.getElementById("giveup").addEventListener("click", giveup);
 function giveup() {
 if (genHard.length === 0) return gameEnd();
   shuffle();
   toggleTeam();
-  
 }
 
-// answer fn
+// correct answer
 document.getElementById("answer").addEventListener("click", won);
 function won(team) {
   if (genHard.length === 0) return gameEnd();
@@ -147,7 +141,6 @@ function gameEnd() {
   }
 }
 
-//toggle team
 function toggleTeam() {
   teamTurn *= -1;
 }
@@ -171,7 +164,6 @@ function reset() {
 
 //insdie ScoreModal: closing modal + restarting the game.
 modalRestart.addEventListener("click", reset);
-
 
 
 //opening instruction modal window 
