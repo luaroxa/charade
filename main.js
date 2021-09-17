@@ -4,7 +4,6 @@ let countdown;
 let dia = String.fromCodePoint(0x1f48e);
 
 let inst = document.getElementById("inst");
-// let abc = document.getElementById("abc"); modalInst
 let modalInst = document.querySelector(".modalInst");
 let modalFinalScore = document.querySelector(".modalFinalScore");
 let modal = document.querySelector(".instBottom");
@@ -167,7 +166,8 @@ inst.addEventListener("click", function () {
 
 // Instruction Modal closinig not working - it hears click but not closing
 document.getElementById("instClose").addEventListener("click", function() {
-    modalInst.style.display = "none";
+    modalInst.classList.add("hidden");
+    // modalInst.style.display = "hidden";
     console.log("why")
   });
 

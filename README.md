@@ -17,6 +17,9 @@ I thought it'd be nice to use a website to do the countdown for us. I also would
 
 [4] HOW TO:
 
+You can go to https://luaroxa.github.io/charade/ to find the game.
+
+
 This game follows a very typical charade rules.
 Instruction:
  1) Pick Team Home & Guest. Team Home will go first. 
