@@ -16,7 +16,6 @@
 // round = arr.length--
 
 
-
 let teamTurn = 1; //player 1
 let timerRunning = false;
 let countdown;
@@ -24,16 +23,15 @@ let countdown;
 //modal 
 var inst = document.getElementById("inst");
 var modalInst = document.getElementById("modalInst");
-var modalScore = document.querySelector(".modalScore")
+var modalFinalScore = document.querySelector(".modalFinalScore")
 var modalRestart= document.querySelector(".modalRestart")
 var scoreMsg = document.getElementById("scoreMsg")
 
 //score
-let scoreBoard = document.getElementById("scoreBoard");
-let currentScore1 = document.getElementById("currentScore1")  
-let currentScore2 = document.getElementById("currentScore2")
-let scoreA = 0;
-let scoreB = 0;
+let ScoreElH = document.getElementById("ScoreH")  
+let ScoreElG = document.getElementById("ScoreG")
+let scoreH = 0;
+let scoreG = 0;
 
 
 //words
@@ -71,10 +69,10 @@ function genWord() {
 }
 
 function gameEnd() {
-  modalScore.classList.remove("hidden");
- if(scoreA === scoreB){
+  modalFinalScore.classList.remove("hidden");
+ if(scoreH === scoreG){
     scoreMsg.innerText = "It's a tie";
- } else if (scoreA < scoreB){
+ } else if (scoreH < scoreG){
     scoreMsg.innerText = "Guest won!";
  } else {
     scoreMsg.innerText = "Home won!";
@@ -139,8 +137,8 @@ function giveup() {
 document.getElementById("answer").addEventListener("click", won);
 function won(team) {
     if (genHard.length === 0) return gameEnd();  
-  teamTurn > 0 ? (scoreA += 1) : (scoreB += 1);
-  teamTurn > 0 ? (currentScore1.innerText = scoreA) : (currentScore2.innerText = scoreB);
+  teamTurn > 0 ? (scoreH += 1) : (scoreG += 1);
+  teamTurn > 0 ? (ScoreElH.innerText = scoreH) : (ScoreElG.innerText = scoreG);
   toggleTeam();
   init();
 }
@@ -155,7 +153,7 @@ document.getElementById("restart").addEventListener("click", reset);
 function reset() {
   init();
   teamTurn = 1;
-  modalScore.style.display = "none"
+  modalFinalScore.style.display = "none"
 }
 
 //insdie ScoreModal: closing modal + restarting the game.
