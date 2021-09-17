@@ -37,3 +37,4 @@ Instruction:
     4) Add favicon
     5) Background music during countdown!
     6) Light up current player's name as an indicator.
+    7) More points added when you get more difficult words.

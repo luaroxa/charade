@@ -230,7 +230,7 @@ button {
 }
 
 /* Instruction Modal */
-#modalInst {
+.modalInst {
   display: none;
   height: 700px;
   width: 1100px;
