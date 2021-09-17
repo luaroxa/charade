@@ -157,15 +157,14 @@ function reset() {
 document.getElementById("restart2").addEventListener("click", reset);
 
 
-// Instruction Modal - works
+// Instruction Modal opening
 inst.addEventListener("click", function () {
     modalInst.className = "modalInst"
 });
 
-// Instruction Modal closinig not working - it hears click but not closing
+// Instruction Modal closinig 
 close.addEventListener("click", function() {
     modalInst.className = "hidden modalInst"
-    console.log("why")
   });
 
 
