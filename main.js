@@ -40,6 +40,11 @@ function init(){
     ScoreElH.innerText = 0;
     ScoreElG.innerText = 0;
     roundEl.innerText = 0;
+    clearTime();
+    
+}
+
+function clearTime(){
     if (timerRunning) {
         clearInterval(countdown);
         timerRunning = false;
@@ -53,6 +58,7 @@ function shuffle() {
   mediumEl.innerText = "";
   hardEl.innerText = "";
   document.getElementById("shuffle").style.display = "block";
+  clearTime();
 }
 // 2. user clicks on start button (team 1 goes)
 document.getElementById("shuffle").addEventListener("click", genWord);
@@ -147,7 +153,7 @@ function toggleTeam() {
 }
 
 //Overall reset of the game.
-document.getElementById("restart").addEventListener("click", reset);
+document.getElementById("restart1").addEventListener("click", reset);
 function reset() {
   shuffle();
   init();

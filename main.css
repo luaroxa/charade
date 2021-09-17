@@ -6,8 +6,8 @@ body {
   margin: auto;
   color: white;
 }
-button{
-    font-family: inherit;
+button {
+  font-family: inherit;
 }
 .window {
   background-color: #ddc2e4;
@@ -47,7 +47,6 @@ button{
   width: 33%;
   text-align: center;
   font-size: 40px;
-
 }
 #scoreH,
 #scoreG {
@@ -201,25 +200,49 @@ button{
 .modalFinalScore {
   height: 250px;
   width: 650px;
-  font-size: 50px;
+  font-size: 25px;
+  color: white;
+  border: 5px solid white;
+
   text-align: center;
   float: initial;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  background-image: url("img/modalScore.png");
-  background-size: contain;
-  background-repeat: no-repeat;
   background-position-x: 0px;
   margin: 0;
   padding: 0;
-  color: black;
+
+  
+}
+
+.mfsTop {
+  background-color: #ddc2e4;
+  width: 100%;
+  height: 20%;
+  padding-top: 10px;
+  border-bottom: 5px solid white;
+  font-size: 30px;
+}
+.mfsBottom {
+  background-color: #95b4b8;
+  width: 100%;
+  height: 80%;
+  border-bottom: 5px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#scoreMsg {
+    margin: 0px;
+    padding-top: 10px;
+    font-size: 30 px;
 }
 
 #modalInst {
-  display: none; 
+  display: none;
   height: 550px;
   width: 1100px;
   font-size: 50px;
@@ -233,36 +256,34 @@ button{
   border: 5px solid white;
 }
 
-.instTop{
-background-color: #ddc2e4;
-width: 100%;
-height: 10%;
-padding-bottom: 5px;
-border-bottom: 5px solid white;
+.instTop {
+  background-color: #ddc2e4;
+  width: 100%;
+  height: 10%;
+  padding-bottom: 5px;
+  border-bottom: 5px solid white;
 }
 
-.instBottom{
-
-    background-color: #95b4b8;
-    width: 100%;
-height: 485px;
-border-bottom: 5px solid white;
-display: flex;
-flex-direction: column;
-justify-content: center;
+.instBottom {
+  background-color: #95b4b8;
+  width: 100%;
+  height: 485px;
+  border-bottom: 5px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-
 }
 
 #instContent {
-    margin: 0px;
-padding-top: 100px;
-font-size: 25px;
+  margin: 0px;
+  padding-top: 100px;
+  font-size: 25px;
 }
 
 #instClose {
-    background-color: #F7DBF0;
-    text-align: center;
+  background-color: #f7dbf0;
+  text-align: center;
   color: white;
   font-size: 20px;
   width: 150px;
@@ -282,21 +303,34 @@ font-size: 25px;
   flex-direction: row;
 }
 
-.side, #restart, #restart2, #inst {
+.side,
+#restart2,
+#inst {
   text-align: center;
   color: white;
   font-size: 20px;
   width: 25%;
   height: 100%;
   background-color: lightcoral;
-  /* border: 2px solid #cca8e0;   */
-  padding:0px;
+  padding: 0px;
 }
 
 #decor {
-  background-color: #F7DBF0;
+  background-color: #f7dbf0;
 }
 
-#inst, #restart, #restart2 {
-    border: none;
+#inst,
+#restart1,
+#restart2 {
+  border: none;
+}
+
+#restart1 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    width: 20%;
+    height: 15%;
+    background-color: lightcoral;
+    margin-top: 30px;
 }
