@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#x1F3AC second</title>
+    <link rel="stylesheet" href="third.css">
+    <script defer src="third.js"></script>
+</head>
+
+<body>
+    <div class="modalFinalScore hidden">
+        <p id="scoreMsg"> Something Went Wrong !</p>
+        <button class="modalRestart" id="restart">Restart</button>
+    </div>
+   <!--top container   -->
+<div class="window">
+<div class="topRow"> Welcome to charades!</div>
+
+<div class="bottomRow">
+    
+    <div id="home">
+       <p> HOME </p>
+       <div id="ScoreH"> 0 </div>
+    </div>
+
+
+    <div id="timerContainer">
+        <div id="clock"></div>
+    <div id="time">00:00</div>
+    <div class="roundContainer"> Round <span id=round> 0 </span></div>
+    </div>
+
+    <div id="guest">
+        <p> GUEST </p>
+        <div id="ScoreG"> 0 </div>
+    </div>
+
+    <!-- window and bottom  -->
+</div>
+</div> 
+
+<div class="cardContainer"> 
+    <div id="card1">
+        <div id=giveupContainer><button id="giveup">I give up!</button> </div>
+    </div>
+    <div id="card2">
+        <br>
+        <button id="init"> Shuffle </button> <br><br>
+        <button class= "word" id="easy"></button> 
+        <button class= "word" id="medium"></button>  
+        <button class= "word" id="hard"></button> 
+    </div>
+    <div id="card3">
+        <div id=answerContainer><button id="answer">I got the answer !</button> </div>
+    </div>
+</div>
+
+<!-- 
+<div class="optionContainer">
+<div id=giveupContainer><button id="giveup">I give up!</button> </div>
+<div id=answerContainer><button id="answer">I got the answer !</button> </div>
+</div> -->
+
+<div id=sideContainer>
+    <div class="side" id="decor"></div>
+    <button class="side" id="inst"> How to Play <div class="hidden" id="modalInst">instruction</div></button>
+    <div class="side" id="decor"></div>
+<button class="side" id="restart">Restart</button>
+
+</div>
+</body>
+</html>
